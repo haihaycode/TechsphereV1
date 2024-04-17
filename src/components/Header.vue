@@ -32,6 +32,7 @@
     </div>
   </div>
 </nav>
+
   </template>
   
   <script>
@@ -41,11 +42,8 @@
     toggleMenu() {
       const button = document.querySelector('[data-collapse-toggle="navbar-default"]');
       const menu = document.getElementById('navbar-default');
-      // Kiểm tra nếu menu hiện đang được mở
       const isOpen = button.getAttribute('aria-expanded') === 'true';
-      // Đảo ngược giá trị của aria-expanded
       button.setAttribute('aria-expanded', !isOpen);
-      // Hiển thị hoặc ẩn menu tương ứng
       if (isOpen) {
         menu.classList.remove('block');
         menu.classList.add('hidden');
