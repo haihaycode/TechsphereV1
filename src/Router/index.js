@@ -5,11 +5,9 @@ import register from '../views/Register.vue';
 const routes = [
   {
     path: '/',
-    name: 'HomePage',
     component: HomePage
   }, {
     path: '/register',
-    name: 'register',
     component: register
   }
 ];
