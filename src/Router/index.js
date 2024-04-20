@@ -1,11 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '../views/homePage.vue';
+import register from '../views/Register.vue';
 
 const routes = [
   {
     path: '/',
     name: 'HomePage',
     component: HomePage
+  }, {
+    path: '/register',
+    name: 'register',
+    component: register
   }
 ];
 
