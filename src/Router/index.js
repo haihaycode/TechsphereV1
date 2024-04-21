@@ -1,14 +1,26 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomePage from '../views/homePage.vue';
-import register from '../views/Register.vue';
 
-const routes = [
+const useComponent = component => () => import(`../views/${component}.vue`);
+
+
+
+export const routes = [
   {
     path: '/',
-    component: HomePage
+    component: useComponent("homePage"),
+    meta: {
+      title: "VeeValidate Examples",
+      description:
+        "This is a collection of examples to showcase the features of VeeValidate"
+    }
   }, {
     path: '/register',
-    component: register
+    component: useComponent("Register"),
+    meta: {
+      title: "VeeValidate Examples",
+      description:
+        "This is a collection of examples to showcase the features of VeeValidate"
+    }
   }
 ];
 
