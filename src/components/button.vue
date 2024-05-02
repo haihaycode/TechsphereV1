@@ -23,7 +23,7 @@
           fill="currentColor"
         />
       </svg>
-      <span v-if="loading">Đang tải...</span>
+      <span v-if="loading">Đang tải..</span>
       <span v-else>{{ text }}</span>
     </button>
   </template>
