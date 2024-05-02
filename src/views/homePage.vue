@@ -53,7 +53,7 @@ export default {
     };
   },
   mounted() {
-    this.loadUserList();
+    this.loadUserList()
   },
   methods: {
     // async handleButtonClick() {
