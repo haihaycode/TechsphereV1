@@ -9,7 +9,7 @@ export const routes = [
     path: '/',
     component: useComponent("homePage"),
     meta: {
-      title: "VeeValidate Examples",
+      title: "Techsphere - Home Page",
       description:
         "This is a collection of examples to showcase the features of VeeValidate"
     }
@@ -17,7 +17,7 @@ export const routes = [
     path: '/register',
     component: useComponent("Register"),
     meta: {
-      title: "VeeValidate Examples",
+      title: "Đăng ký tài khoản",
       description:
         "This is a collection of examples to showcase the features of VeeValidate"
     }
