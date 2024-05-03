@@ -11,5 +11,11 @@ const app = createApp(App);
 app.component('Field', Field);
 // eslint-disable-next-line vue/multi-word-component-names
 app.component('Form', Form);
+
+router.beforeEach((to, from, next) => {
+    document.title = to.meta.title || '404 - Not Found';
+    next();
+  });
+
 app.use(router);
 app.mount('#app');
