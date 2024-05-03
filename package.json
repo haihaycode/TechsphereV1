@@ -11,6 +11,8 @@
     "axios": "^1.6.8",
     "core-js": "^3.8.3",
     "lodash": "^4.17.21",
+    "moment": "^2.30.1",
+    "moment-duration-format": "^2.3.2",
     "vee-validate": "^4.12.6",
     "vue": "^3.4.23",
     "vue-demi": "^0.14.7",
