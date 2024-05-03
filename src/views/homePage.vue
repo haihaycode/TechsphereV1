@@ -6,12 +6,12 @@
 
 
 
-  <div class="grid sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-4  gap-4 mx-2 lg:mx-20 ">
+  <div class="grid sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-3  gap-4 mx-2 lg:mx-20 ">
 
     <div v-for="(user, index) in userList" :key="index"
       class="max-w p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <a href="#">
-        <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
+        <img class="rounded-t-lg max-w h-52" src="/image/image1.png" alt="" />
       </a>
       <div class="p-5">
         <a href="#">
