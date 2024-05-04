@@ -70,7 +70,7 @@ export default {
       loading: true,
       buttonText: 'Đăng ký',
       posts: [],
-      link : 'http://localhost:1907'
+      link : 'https://techsphere-production.up.railway.app'
     };
   },
   mounted() {
