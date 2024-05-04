@@ -4,7 +4,7 @@
 
   <div class="relative min-h-40 ">
     <img v-lazysizes :src="srcImage" alt="Image" @load="handleLoad" @error="handleError" loading="lazy" 
-    class="rounded-t-lg w-full max-h-60 transition-opacity duration-500 " :class="{ 'opacity-0': loading, 'blur-sm': loading }">
+    class="rounded-t-lg w-full max-h-96 transition-opacity duration-500 " :class="{ 'opacity-0': loading, 'blur-sm': loading }">
     <div v-if="loading" class="absolute inset-0 flex items-center justify-center bg-white bg-opacity-75">
       <content-loader class="rounded-t-lg max-w p-3">
         <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
