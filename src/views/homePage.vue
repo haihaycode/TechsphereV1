@@ -9,7 +9,7 @@
   <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-2 lg:mx-20 my-5 mt-10 max-w-full">
 
     <div v-for="(post, index) in posts" :key="index"
-      class="border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700  ">
+      class=" rounded-lg shadow dark:bg-gray-800 dark:border-gray-700  ">
       <a href="#">
         <Image  :srcImage="getImageUrl(post.postId)"/>
       </a>
