@@ -15,7 +15,9 @@
     "moment-duration-format": "^2.3.2",
     "vee-validate": "^4.12.6",
     "vue": "^3.4.23",
+    "vue-content-loader": "^2.0.1",
     "vue-demi": "^0.14.7",
+    "vue-lazysizes": "^1.0.5",
     "vue-router": "^4.3.1",
     "vuex": "^4.1.0",
     "yup": "^1.4.0"
