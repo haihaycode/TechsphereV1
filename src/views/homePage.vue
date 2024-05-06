@@ -52,16 +52,21 @@
           <div  v-for="(post, index) in posts" :key="index"  class="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
             <Image :srcImage="getImageUrl(post.postId)" class="w-full h-52 object-cover"/>
             <div class="p-6">
-              <span class="text-sm block text-gray-400 mb-2">{{ formatDateTimeCountdown(post.updatedAt) }} | {{ formatDateTime(post.updatedAt) }}</span>
-              <h3 class="text-xl font-bold text-[#333]">{{ truncateDescription(post.title, 100) }}</h3>
+              <span class="text-sm block text-gray-400 mb-2"> {{   formatDateTimeCountdown(post.updatedAt) }} | {{ formatDateTime(post.updatedAt) }}</span>
+              <h3 class="text-xl font-bold text-[#333]">{{ truncateDescription(post.title, 100) }} / {{ post.postId }}</h3>
               <hr class="my-6" />
               <p class="text-gray-400 text-sm">{{ truncateDescription(post.description, 80) }}</p>
-            </div>
+            </div>    
           </div>
          
         </div>
       </div>
   </div>
+
+
+
+<ListCategories/>
+
 
 
 
@@ -78,13 +83,16 @@ import Image from '@/components/image.vue';
 import axios from 'axios';
 import { truncateDescription } from '@/helper/StringHelper.js'
 import { formatDateTimeCountdown, formatDateTime } from '@/helper/datetimeHelper.js'
+import ListCategories from '@/components/ListCategories.vue';
 export default {
   name: 'HomePage',
   components: {
-    // Button
+    // 
     SkeletonCard,
-    // eslint-disable-next-line vue/no-unused-components
-    Image
+    // 
+    Image,
+    //
+    ListCategories
 
   },
   data() {
