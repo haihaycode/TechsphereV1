@@ -21,6 +21,14 @@ export const routes = [
       description:
         "This is a collection of examples to showcase the features of VeeValidate"
     }
+  }, {
+    path: '/login',
+    component: useComponent("Login"),
+    meta: {
+      title: "Đăng Nhập tài khoản",
+      description:
+        "This is a collection of examples to showcase the features of VeeValidate"
+    }
   }
 ];
 
