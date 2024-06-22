@@ -39,7 +39,6 @@
                     <label for="acceptTerms" class="form-check-label"> &nbsp; Remember Me ?</label>
                     <div class="text-red-500">{{ errors.acceptTerms }}</div>
                 </div>
-
                 <div class="form-group text-end">
                     <Button type="submit" :disabled="isButtonDisabled" :text="LoginButton" :loading="loading" />
                 </div>
@@ -82,8 +81,6 @@ export default {
         async onSubmit(values) {
             // alert('SUCCESS!! :-)\n\n' + JSON.stringify(values, null, 4));
             // đợi api
-
-
             const loginData = {
                 usernameOrEmail: values.email,
                 password: values.password
