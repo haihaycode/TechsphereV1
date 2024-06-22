@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve ",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
@@ -13,6 +13,7 @@
     "lodash": "^4.17.21",
     "moment": "^2.30.1",
     "moment-duration-format": "^2.3.2",
+    "notyf": "^3.10.0",
     "vee-validate": "^4.12.6",
     "vue": "^3.4.23",
     "vue-content-loader": "^2.0.1",

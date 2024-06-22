@@ -14,7 +14,7 @@
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             :class="{
                 'bg-red-50 border border-red-500 text-red-900 placeholder-red-700': errors.email,
-                ' border border-blue-500 text-green-900  placeholder-green-700': !errors.email
+                ' border border-blue-500 text-blue-900  placeholder-blue-700': !errors.email
             }" />
                         <div class="text-red-500">{{ errors.email }}</div>
                     </div>
@@ -41,8 +41,7 @@
                 </div>
 
                 <div class="form-group text-end">
-                    <button type="submit"
-                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Login</button>
+                    <Button type="submit" :disabled="isButtonDisabled" :text="LoginButton" :loading="loading" />
                 </div>
             </Form>
 
@@ -51,29 +50,69 @@
 </template>
 
 <script>
+import Button from '@/components/button.vue';
+
 import { Form, Field } from 'vee-validate';
 import * as Yup from 'yup';
+import axios from 'axios';
+import { Notyf } from 'notyf';
 
 export default {
-    name: 'LoginComponent',
+    name: 'LoginRegister',
     components: {
         Form,
         Field,
+        Button
     },
     data() {
         // phần này kiểm tra validation
         const schema = Yup.object().shape({
             email: Yup.string().required('Email is required *').email('Email is invalid *'),
-            password: Yup.string().min(6, 'Password must be at least 8 characters *').required('Password is required *'),
-
+            password: Yup.string().min(1, 'Password must be at least 1 characters *').required('Password is required *'),
         });
-        return { schema };
+        return {
+            schema,
 
+            isButtonDisabled: false,
+            loading: false,
+            LoginButton: 'Login ',
+        };
     },
     methods: {
-        onSubmit(values) {
-            alert('SUCCESS!! :-)\n\n' + JSON.stringify(values, null, 4));
+        async onSubmit(values) {
+            // alert('SUCCESS!! :-)\n\n' + JSON.stringify(values, null, 4));
             // đợi api
+
+
+            const loginData = {
+                usernameOrEmail: values.email,
+                password: values.password
+            };
+            console.log(loginData);
+
+            this.disabledButton = true;
+            this.loading = true;
+            this.LoginButton = 'Loading...';
+
+            const notyf = new Notyf();
+
+            try {
+                const response = await axios.post('http://localhost:8080/api/auth/login', loginData);
+                console.log('Success:', response);
+                notyf.success('Login successfully !');
+
+            } catch (error) {
+                console.error('Error:', error);
+                notyf.error('Login failed !');
+
+            } finally {
+                this.disabledButton = false;
+                this.loading = false;
+                this.LoginButton = 'Login';
+
+            }
+
+
         }
     }
 };
