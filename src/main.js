@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import './assets/style.css';
+import store from './store';
 import router from './Router';
 import 'notyf/notyf.min.css';
 import { Field, Form, configure } from 'vee-validate'; // Import các thành phần cụ thể cần sử dụng
@@ -19,6 +20,10 @@ router.beforeEach((to, from, next) => {
     next();
 });
 
+
+store.dispatch('checkToken');
+
 app.use(router);
+app.use(store);
 
 app.mount('#app');
