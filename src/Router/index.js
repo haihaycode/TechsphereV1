@@ -30,10 +30,19 @@ export const routes = [
         "This is a collection of examples to showcase the features of VeeValidate"
     }
   }
-];
-
-const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  , {
+    path: '/account/info',
+    component: useComponent("UserInformation"),
+    meta: {
+      title: "Thông Tin Cá Nhân",
+      description:
+        "This is a collection of examples to showcase the features of VeeValidate"
+    }
+  }
+  ];
+  
+  const router = createRouter({
+    history: createWebHistory(process.env.BASE_URL),
   routes
 });
 

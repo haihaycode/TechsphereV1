@@ -55,7 +55,7 @@ export default {
         toggleMenu() {
             var menu = document.getElementById("mega-menu-full");
             var button = document.querySelector("[data-collapse-toggle='mega-menu-full']");
-
+            // Kiểm tra trạng thái của menu
             if (menu.classList.contains("hidden")) {
                 // Hiển thị menu
                 menu.classList.remove("hidden");
