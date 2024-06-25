@@ -28,7 +28,58 @@ export const saveToken = (token, rememberMe) => {
   if (rememberMe) {
     Cookies.set('authToken', token, { expires: 5 / 24 }); // 5 hours
   } 
+  Cookies.set('authToken', token, { expires: 1 / 24 }); // 5 hours
   store.commit('SET_LOGIN_STATUS', true);
   store.commit('SET_TOKEN', token);
   
 };
+
+export const accountService = async () => {
+  const token = store.state.token;
+  if (token) {
+    try {
+      const response = await axios.get(`${API_URL}/account/auth`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      return response.data;
+    } catch (error) {
+      throw new Error(error.response ? error.response.data.message : error.message);
+    }
+  } else {
+    throw new Error('No token found');
+  }
+};
+
+
+export const getAvatar = async (image) => {
+  const token = store.state.token;
+  if (!token) {
+    throw new Error('No token found');
+  }
+
+  try {
+    const response = await axios.get(`http://localhost:8080/api/public/client/image/${image}`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      },
+      responseType: 'arraybuffer' 
+    });
+
+    const base64Image = arrayBufferToBase64(response.data);
+    return `data:image/jpeg;base64,${base64Image}`;
+  } catch (error) {
+    throw new Error(error.response ? error.response.data.message : error.message);
+  }
+};
+
+function arrayBufferToBase64(buffer) {
+  let binary = '';
+  const bytes = new Uint8Array(buffer);
+  const len = bytes.byteLength;
+  for (let i = 0; i < len; i++) {
+    binary += String.fromCharCode(bytes[i]);
+  }
+  return btoa(binary);
+}
