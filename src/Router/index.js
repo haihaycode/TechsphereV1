@@ -51,6 +51,15 @@ export const routes = [
         "This is a collection of examples to showcase the features of VeeValidate"
     }
   }
+  , {
+    path: '/forgetpassword',
+    component: useComponent("ForgetPassword"),
+    meta: {
+      title: "Đổi mật khẩu",
+      description:
+        "This is a collection of examples to showcase the features of VeeValidate"
+    }
+  }
   ];
   
   const router = createRouter({
