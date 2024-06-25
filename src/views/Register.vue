@@ -2,104 +2,82 @@
   <div class="card m-3">
     <div class="card-body grid grid-cols-1 md:grid-cols-2 gap-4 mx-3">
       <div>
-        <img
-          class="h-auto max-w-full rounded-lg"
-          src="/image/login.avif"
-          alt=""
-        />
+        <img class="h-auto max-w-full rounded-lg" src="/image/login.avif" alt="" />
       </div>
-      <Form
-        @submit="onSubmit"
-        :validation-schema="schema"
-        v-slot="{ errors }"
-
-      >
-      
-        
+      <Form @submit="onSubmit" :validation-schema="schema" v-slot="{ errors }">
         <div class="form-row mb-3">
-          <label
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >Name</label
-          >
-          <Field
-            name="name"
-            type="text"
+          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+          <Field name="name" type="text"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             :class="{
-                'bg-red-50 border border-red-500 text-red-900 placeholder-red-700': errors.name,
-                ' border border-blue-500 text-blue-900  placeholder-blue-700': !errors.name
-            }"/>
+        'bg-red-50 border border-red-500 text-red-900 placeholder-red-700':
+          errors.name,
+        ' border border-blue-500 text-blue-900  placeholder-blue-700':
+          !errors.name,
+      }" />
           <div class="text-red-500">{{ errors.name }}</div>
         </div>
         <div class="form-row mb-3">
-          <label
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >Username</label
-          >
-         <Field name="username" type="text"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            :class="{
-                'bg-red-50 border border-red-500 text-red-900 placeholder-red-700': errors.username,
-                ' border border-blue-500 text-green-900 dark:text-green-400 placeholder-green-700': !errors.username
-            }" />
+          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
+          <Field name="username" type="text"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            :class="{
+        'bg-red-50 border border-red-500 text-red-900 placeholder-red-700':
+          errors.username,
+        ' border border-blue-500 text-green-900 dark:text-green-400 placeholder-green-700':
+          !errors.username,
+      }" />
           <div class="text-red-500">{{ errors.username }}</div>
         </div>
 
         <div class="form-row mb-3">
           <label>Email</label>
           <Field name="email" type="email"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            :class="{
-                'bg-red-50 border border-red-500 text-red-900 placeholder-red-700': errors.email,
-                ' border border-blue-500 text-green-900 dark:text-green-400 placeholder-green-700': !errors.email
-            }" />
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            :class="{
+        'bg-red-50 border border-red-500 text-red-900 placeholder-red-700':
+          errors.email,
+        ' border border-blue-500 text-green-900 dark:text-green-400 placeholder-green-700':
+          !errors.email,
+      }" />
           <div class="text-red-500">{{ errors.email }}</div>
         </div>
 
         <div class="form-group col">
           <label>Password</label>
           <Field name="password" type="password"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            :class="{
-                'bg-red-50 border border-red-500 text-red-900 placeholder-red-700': errors.password,
-                ' border border-blue-500 text-green-900 dark:text-green-400 placeholder-green-700': !errors.password
-            }" />
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            :class="{
+        'bg-red-50 border border-red-500 text-red-900 placeholder-red-700':
+          errors.password,
+        ' border border-blue-500 text-green-900 dark:text-green-400 placeholder-green-700':
+          !errors.password,
+      }" />
           <div class="text-red-500">{{ errors.password }}</div>
         </div>
-        <div class="form-group col">
+        <div class="form-group col mb-3">
           <label>Confirm Password</label>
           <Field name="confirmPassword" type="password"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            :class="{
-                'bg-red-50 border border-red-500 text-red-900 placeholder-red-700': errors.confirmPassword,
-                ' border border-blue-500 text-green-900 dark:text-green-400 placeholder-green-700': !errors.confirmPassword
-            }" />
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            :class="{
+        'bg-red-50 border border-red-500 text-red-900 placeholder-red-700':
+          errors.confirmPassword,
+        ' border border-blue-500 text-green-900 dark:text-green-400 placeholder-green-700':
+          !errors.confirmPassword,
+      }" />
           <div class="text-red-500">{{ errors.confirmPassword }}</div>
         </div>
 
-        <div class="form-group form-check">
-          <Field
-            name="acceptTerms"
-            type="checkbox"
-            id="acceptTerms"
-            value="true"
-            class="form-check-input"
-            :class="{ 'is-invalid': errors.acceptTerms }"
-          />
-          <label for="acceptTerms" class="form-check-label"
-            >Accept Terms & Conditions</label
-          >
+        <div class="form-group form-check ">
+          <Field name="acceptTerms" type="checkbox" id="acceptTerms" value="true" class="form-check-input"
+            :class="{ 'is-invalid': errors.acceptTerms }" />
+          <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
           <div class="text-red-500">{{ errors.acceptTerms }}</div>
         </div>
 
         <div class="form-group text-end">
-          <Button
-            type="submit"
-            :disabled="isButtonDisabled"
-            :text="SignupButton"
-            :loading="loading"
-          />
-          <Button type="reset" class="btn btn-secondary"  :text="ResetButton"></Button>
+          <Button type="submit" :disabled="isButtonDisabled" :text="SignupButton" :loading="loading" />
+          <Button type="reset" class="btn btn-secondary" :text="ResetButton"></Button>
         </div>
       </Form>
     </div>
@@ -111,7 +89,8 @@ import { Form, Field } from "vee-validate";
 import * as Yup from "yup";
 import Button from "@/components/button.vue";
 import { Notyf } from "notyf";
-import axios from "axios";
+
+import { register } from "@/services/authService";
 
 export default {
   name: "RegisterComponent",
@@ -140,15 +119,12 @@ export default {
       schema,
       isButtonDisabled: false,
       loading: false,
-      SignupButton: "register",
-      ResetButton: "reset",
+      SignupButton: "Register",
+      ResetButton: "Reset",
     };
   },
   methods: {
     async onSubmit(values) {
-      alert("SUCCESS!! :-)\n\n" + JSON.stringify(values, null, 4));
-      //đợi api
-
       const registerData = {
         name: values.name,
         username: values.username,
@@ -163,10 +139,7 @@ export default {
       const notyf = new Notyf();
 
       try {
-        const response = await axios.post(
-          "http://localhost:8080/api/auth/signup",
-          registerData
-        );
+        const response = await register(values);
         console.log("Success:", response);
         notyf.success("Signup successfully !");
       } catch (error) {

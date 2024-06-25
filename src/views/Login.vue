@@ -53,8 +53,8 @@ import Button from '@/components/button.vue';
 
 import { Form, Field } from 'vee-validate';
 import * as Yup from 'yup';
-import axios from 'axios';
 import { Notyf } from 'notyf';
+import { login, saveToken } from '@/services/authService';
 
 export default {
     name: 'LoginRegister',
@@ -79,13 +79,10 @@ export default {
     },
     methods: {
         async onSubmit(values) {
-            // alert('SUCCESS!! :-)\n\n' + JSON.stringify(values, null, 4));
-            // đợi api
             const loginData = {
                 usernameOrEmail: values.email,
                 password: values.password
             };
-            console.log(loginData);
 
             this.disabledButton = true;
             this.loading = true;
@@ -94,10 +91,9 @@ export default {
             const notyf = new Notyf();
 
             try {
-                const response = await axios.post('http://localhost:8080/api/auth/login', loginData);
-                console.log('Success:', response);
+                const response = await login(loginData);
+                saveToken(response.accessToken, values.acceptTerms);
                 notyf.success('Login successfully !');
-
             } catch (error) {
                 console.error('Error:', error);
                 notyf.error('Login failed !');

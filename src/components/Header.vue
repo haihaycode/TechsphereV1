@@ -1,17 +1,21 @@
 <template>
 
 
-<div class="relative font-[sans-serif] before:absolute before:w-full before:h-full before:inset-0 before:bg-black before:opacity-50 before:z-10">
-      <img src="https://readymadeui.com/cardImg.webp" alt="Banner Image" class="absolute inset-0 w-full h-full object-cover" />
-      <div class="min-h-[300px] relative z-50 h-full max-w-6xl mx-auto flex flex-col justify-center items-center text-center text-white p-6">
-        <h2 class="sm:text-4xl text-2xl font-bold mb-6">Explore the World</h2>
-        <p class="text-lg text-center text-gray-200">Embark on unforgettable journeys. Book your dream vacation today!</p>
-        <a href="javascript:void(0)"
-          class="mt-8 bg-transparent text-white text-base font-semibold py-2.5 px-6 border-2 border-white rounded hover:bg-white hover:text-black transition duration-300 ease-in-out">
-          Book Now
-        </a>
-      </div>
-    </div>  
+    <div
+        class="relative font-[sans-serif] before:absolute before:w-full before:h-full before:inset-0 before:bg-black before:opacity-50 before:z-10">
+        <img src="https://readymadeui.com/cardImg.webp" alt="Banner Image"
+            class="absolute inset-0 w-full h-full object-cover" />
+        <div
+            class="min-h-[300px] relative z-50 h-full max-w-6xl mx-auto flex flex-col justify-center items-center text-center text-white p-6">
+            <h2 class="sm:text-4xl text-2xl font-bold mb-6">Explore the World</h2>
+            <p class="text-lg text-center text-gray-200">Embark on unforgettable journeys. Book your dream vacation
+                today!</p>
+            <a href="javascript:void(0)"
+                class="mt-8 bg-transparent text-white text-base font-semibold py-2.5 px-6 border-2 border-white rounded hover:bg-white hover:text-black transition duration-300 ease-in-out">
+                Book Now
+            </a>
+        </div>
+    </div>
 
 
     <nav class="bg-white border-gray-200 dark:bg-gray-900  border-t-8">
@@ -36,7 +40,7 @@
                     class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                     <li>
                         <a href="#"
-                            class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+                            class="block py-2 px-3 text-white-600 bg-blue-700 rounded md:bg-transparent md:text-black text-white md:p-0 dark:text-white md:dark:text-blue-500"
                             aria-current="page">Trang chủ</a>
                     </li>
                     <li>
@@ -55,10 +59,10 @@
                             <RouterLink to="/Register">Tài khoản</RouterLink>
                         </a>
                     </li>
-                    
 
 
-                    
+
+
 
 
                 </ul>
@@ -76,7 +80,7 @@
 
 
 
-   
+
 
 </template>
 
@@ -84,7 +88,7 @@
 import Nav from '@/components/Nav.vue';
 export default {
     name: 'HeaderApp',
-    components :{
+    components: {
         // eslint-disable-next-line vue/no-unused-components
         Nav
     },
@@ -116,6 +120,8 @@ export default {
                 button.setAttribute("aria-expanded", "false");
             }
         }
+
+
     }
 }
 </script>
