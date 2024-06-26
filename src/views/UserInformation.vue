@@ -8,9 +8,8 @@
       <Form @submit="onSubmit" :validation-schema="schema" v-slot="{ errors }" class="col-span-2">
 
 
-        <img v-if="account.profilePicture"
-          class="w-40 h-40 p-1 mx-auto rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
-          :src="account.profilePicture" alt="User avatar">
+        <img v-if="account.photo" class="w-40 h-40 p-1 mx-auto rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
+          :src="account.photo" alt="Loading avatar...">
         <img v-else class="w-40 h-40 p-1 mx-auto rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
           src="/image/account/no-avatar.png" alt="Default avatar">
 
@@ -130,6 +129,7 @@ export default {
         phoneNumber: null,
         username: "Loading...",
         profilePicture: null,
+        photo: null
 
 
       },
@@ -159,10 +159,8 @@ export default {
     },
     async loadImage() {
       try {
-
         const response = await getAvatar(this.account.profilePicture);
-        this.account.profilePicture = response;
-
+        this.account.photo = response;
       } catch (error) {
         console.error('Failed to load account:', error);
       }
