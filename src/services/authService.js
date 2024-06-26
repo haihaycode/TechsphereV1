@@ -83,3 +83,55 @@ function arrayBufferToBase64(buffer) {
   }
   return btoa(binary);
 }
+
+//update image account
+
+
+export const senotp = async (email) => {
+  const token = store.state.token;
+  try {
+    const response = await axios.post(`${API_URL}/send`, email,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
+    );
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response ? error.response.data.message : error.message);
+  }
+};
+
+
+export const updateAccount = async (accountData) => {
+  const token = store.state.token;
+  try {
+    const response = await axios.post(`${API_URL}/account/update/profile`, accountData,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
+    );
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response ? error.response.data.message : error.message);
+  }
+};
+
+export const okchangpassword = async (otppassword) => {
+  const token = store.state.token;
+  try {
+    const response = await axios.post(`${API_URL}/verify`, otppassword,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
+    );
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response ? error.response.data.message : error.message);
+  }
+};
