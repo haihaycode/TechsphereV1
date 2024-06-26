@@ -31,6 +31,7 @@ export const saveToken = (token, rememberMe) => {
   Cookies.set('authToken', token, { expires: 1 / 24 }); // 5 hours
   store.commit('SET_LOGIN_STATUS', true);
   store.commit('SET_TOKEN', token);
+ 
   
 };
 
