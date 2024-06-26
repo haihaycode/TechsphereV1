@@ -1,19 +1,19 @@
+<!-- clean code là trên hết nghe -->
 <template>
   <div class="card m-3">
     <div class="card-body grid grid-cols-1 md:grid-cols-3">
       <div class="w-full">
         <sidebar></sidebar>
       </div>
-
-
-
       <Form @submit="updateAccount" :validation-schema="schema" v-slot="{ errors }" class="col-span-2">
+
         <img v-if="account.profilePicture" @click="triggerFileInput"
           class="w-40 h-40 p-1 mx-auto rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
           :src="account.profilePicture" alt="User avatar" />
         <img v-else @click="triggerFileInput"
           class="w-40 h-40 p-1 mx-auto rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
           src="/image/account/no-avatar.png" alt="Default avatar" />
+
         <input type="file" ref="fileInput" @change="handleFileChange" style="display: none" accept="image/*" />
 
         <div class="flex justify-center items-center">
@@ -137,14 +137,11 @@ export default {
       account: {
         name: null,
         gender: null,
-        address: null,
+        address: "fhgfshb",
         phoneNumber: null,
         username: "Loading...",
         profilePicture: null,
         photo: null
-
-
-
       },
     };
   },
@@ -152,17 +149,10 @@ export default {
     this.loadAccount();
   },
   methods: {
-    // async onSubmit(values) {
-    //   alert("SUCCESS!! :-)\n\n" + JSON.stringify(values, null, 4));
-    //   this.token = Cookies.get("authToken");
-    //   console.log("đây là token nè đúng không" + this.token);
-    // },
-
     async loadAccount() {
       try {
-        const response = await accountService(); // Adjust accountService function call as per your implementation
-        this.account = response.data; // Assuming accountService returns user account data
-        console.log(this.account);
+        const response = await accountService();
+        this.account = response.data;
       } catch (error) {
         console.error("Failed to load account:", error);
       }
@@ -172,53 +162,36 @@ export default {
     async loadImage() {
       try {
         const response = await getAvatar(this.account.profilePicture);
-
         this.account.photo = response;
-
         this.account.profilePicture = response;
-
       } catch (error) {
         console.error("Failed to load account:", error);
       }
     },
 
 
-    async updateAccount(values) {
-      alert("SUCCESS!! :-)\n\n" + JSON.stringify(values, null, 4))
-      const data = {
-        name: values.name,
-        gender: values.gender,
-        phoneNumber: values.phoneNumber,
-        address: values.address,
-      };
-      console.log(data);
+    async updateAccount() {
       this.disabledButton = true;
       this.loading = true;
       this.SignupButton = "Loading...";
       const notyf = new Notyf();
 
       try {
-        const response = await updateAccount(values);
-        console.log("Success:", response);
-        notyf.success("Successfully updated!");
+        //cập nhật với account (object ) chứ ai lại cập nhật với 
+        const response = await updateAccount(this.account);
+        notyf.success(response.message);//lấy thông báo từ server gửi về 
       } catch (error) {
         console.error("Error:", error);
-        notyf.error("Update information failed!");
+        notyf.error("Update information failed!");//lỗi mình tự viết cũng đc không cần từ server hoặc lấy từ server
       } finally {
         this.disabledButton = false;
         this.loading = false;
-        this.ChangeButton = "Send Otp";
+        this.loadAccount();
       }
     },
 
 
 
-
-
-    // handleFileChange(event) {
-    //   const file = event.target.files[0];
-    //   console.log("Selected file:", file);
-    // },
     triggerFileInput() {
       this.$refs.fileInput.click();
 
