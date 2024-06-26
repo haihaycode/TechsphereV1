@@ -42,6 +42,11 @@ const store = createStore({
       Cookies.remove('authToken');
     },
   },
+  getters: {
+    getToken(state) {
+      return state.token;
+    },
+  },
   plugins: debug ? [createLogger()] : [],
 });
 

@@ -1,8 +1,10 @@
 // router/index.js
 
 import { createRouter, createWebHistory } from 'vue-router';
-import { isAuthenticated } from '@/middleware/auth';
+import { isAuthenticated,unAuthenticated } from '@/middleware/auth';
 import { logout } from '@/utils/auth';
+
+
 
 const useComponent = component => () => import(`../views/${component}.vue`);
 
@@ -45,6 +47,7 @@ export const routes = [
   , {
     path: '/account/info',
     component: useComponent("UserInformation"),
+    beforeEnter : unAuthenticated,
     meta: {
       title: "Thông Tin Cá Nhân",
       description:
@@ -52,7 +55,7 @@ export const routes = [
     }
   }
   , {
-    path: '/forgetpassword',
+    path: '/account/forgetpassword',
     component: useComponent("ForgetPassword"),
     meta: {
       title: "Đổi mật khẩu",
@@ -60,6 +63,7 @@ export const routes = [
         "This is a collection of examples to showcase the features of VeeValidate"
     }
   }
+
   ];
   
   const router = createRouter({

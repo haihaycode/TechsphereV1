@@ -5,7 +5,7 @@
   <!-- <SkeletonCard :loading="loading" /> -->
 
 
-<!-- 
+  <!-- 
   <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-2 lg:mx-20 my-5 mt-10 max-w-full">
 
     <div v-for="(post, index) in posts" :key="index" class=" rounded-lg shadow dark:bg-gray-800 dark:border-gray-700  ">
@@ -37,35 +37,38 @@
 
 
   </div> -->
-   
+
 
   <div class="bg-gray-100 md:px-10 px-4 py-12 font-[sans-serif]">
 
-   
-      <div class="container mx-auto">
-        <h2 class="text-3xl font-extrabold text-gray-800 mb-8">Latest Blog Posts</h2>
-        <SkeletonCard :loading="loading" />
 
-        
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-extrabold text-gray-800 mb-8">Latest Blog Posts</h2>
+      <SkeletonCard :loading="loading" />
 
-          <div  v-for="(post, index) in posts" :key="index"  class="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
-            <Image :srcImage="getImageUrl(post.postId)" class="w-full h-52 object-cover"/>
-            <div class="p-6">
-              <span class="text-sm block text-gray-400 mb-2"> {{   formatDateTimeCountdown(post.updatedAt) }} | {{ formatDateTime(post.updatedAt) }}</span>
-              <h3 class="text-xl font-bold text-[#333]">{{ truncateDescription(post.title, 100) }} / {{ post.postId }}</h3>
-              <hr class="my-6" />
-              <p class="text-gray-400 text-sm">{{ truncateDescription(post.description, 80) }}</p>
-            </div>    
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div v-for="(post, index) in posts" :key="index"
+          class="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
+          <Image :srcImage="getImageUrl(post.postId)" class="w-full h-52 object-cover" />
+          <div class="p-6">
+            <span class="text-sm block text-gray-400 mb-2"> {{ formatDateTimeCountdown(post.updatedAt) }} | {{
+        formatDateTime(post.updatedAt) }}</span>
+            <h3 class="text-xl font-bold text-[#333]">{{ truncateDescription(post.title, 100) }} / {{ post.postId }}
+            </h3>
+            <hr class="my-6" />
+            <p class="text-gray-400 text-sm">{{ truncateDescription(post.description, 80) }}</p>
           </div>
-         
         </div>
+
       </div>
+    </div>
   </div>
 
 
 
-<ListCategories/>
+  <ListCategories />
 
 
 
@@ -84,6 +87,7 @@ import axios from 'axios';
 import { truncateDescription } from '@/helper/StringHelper.js'
 import { formatDateTimeCountdown, formatDateTime } from '@/helper/datetimeHelper.js'
 import ListCategories from '@/components/ListCategories.vue';
+// import { account } from '@/services/authService'
 export default {
   name: 'HomePage',
   components: {
@@ -105,6 +109,8 @@ export default {
     };
   },
   mounted() {
+    // const user = account();
+    // console.log(user);
     this.loadPostList()
 
   },
