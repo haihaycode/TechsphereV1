@@ -135,10 +135,31 @@ export const changpassword = async (data) => {
     throw new Error('No token found');
   }
   try {
-    console.log("haha"+data);
+    console.log(data);
     const response = await axios.post(`${API_URL}/verify`, data, {
       headers: {
          Authorization: `Bearer ${token}`,
+      }
+    });
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response ? error.response.data.message : error.message);
+  }
+};
+
+export const updateAvatar = async (file) => {
+  const token = store.state.token; 
+  if (!token) {
+    throw new Error('No token found');
+  }
+  try {
+    const formData = new FormData();
+    formData.append('image', file);
+
+    const response = await axios.post(`${API_URL}/account/update/avatar`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        Authorization: `Bearer ${token}`,
       }
     });
     return response.data;

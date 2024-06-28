@@ -138,11 +138,7 @@ export default {
         otp: values.otp,
         password: values.password,
       };
-<<<<<<< HEAD
       console.log(data);
-=======
-
->>>>>>> c7e2f1776fb4add6cc7e8c6df5f04b90680ba9c4
       this.disabledButton = true;
       this.loading = true;
       this.SignupButton = "Loading...";
