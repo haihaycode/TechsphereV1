@@ -133,14 +133,13 @@ export default {
         password: values.password,
       };
       console.log(data);
-
       this.disabledButton = true;
       this.loading = true;
       this.SignupButton = "Loading...";
       const notyf = new Notyf();
 
       try {
-        const response = await changpassword(values);
+        const response = await changpassword(data);
         console.log("Success:", response);
         notyf.success("changed password successfully!");
       } catch (error) {
@@ -152,6 +151,8 @@ export default {
         this.ChangeButton = "Send Otp";
       }
     },
+
+
   },
 };
 </script>

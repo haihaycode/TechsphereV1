@@ -247,7 +247,7 @@ export default {
       } finally {
         this.disabledButton = false;
         this.loading = false;
-        this.ChangeButton = "Send Otp";
+        this.loadAccount();
       }
     },
 
