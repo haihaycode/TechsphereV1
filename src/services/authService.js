@@ -31,6 +31,7 @@ export const saveToken = (token, rememberMe) => {
   Cookies.set('authToken', token, { expires: 1 / 24 }); // 5 hours
   store.commit('SET_LOGIN_STATUS', true);
   store.commit('SET_TOKEN', token);
+ 
   
 };
 
@@ -89,6 +90,10 @@ function arrayBufferToBase64(buffer) {
 
 export const senotp = async (email) => {
   const token = store.state.token;
+  if (!token) {
+    throw new Error('No token found');
+  }
+
   try {
     const response = await axios.post(`${API_URL}/send`, email,
       {
@@ -106,6 +111,10 @@ export const senotp = async (email) => {
 
 export const updateAccount = async (accountData) => {
   const token = store.state.token;
+  if (!token) {
+    throw new Error('No token found');
+  }
+
   try {
     const response = await axios.post(`${API_URL}/account/update/profile`, accountData,
       {
@@ -120,16 +129,18 @@ export const updateAccount = async (accountData) => {
   }
 };
 
-export const okchangpassword = async (otppassword) => {
+export const changpassword = async (data) => {
   const token = store.state.token;
+  if (!token) {
+    throw new Error('No token found');
+  }
   try {
-    const response = await axios.post(`${API_URL}/verify`, otppassword,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
+    console.log("haha"+data);
+    const response = await axios.post(`${API_URL}/verify`, data, {
+      headers: {
+         Authorization: `Bearer ${token}`,
       }
-    );
+    });
     return response.data;
   } catch (error) {
     throw new Error(error.response ? error.response.data.message : error.message);

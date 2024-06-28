@@ -6,6 +6,7 @@ import { logout } from '@/utils/auth';
 
 
 
+
 const useComponent = component => () => import(`../views/${component}.vue`);
 
 export const routes = [
@@ -57,6 +58,7 @@ export const routes = [
   , {
     path: '/account/forgetpassword',
     component: useComponent("ForgetPassword"),
+    beforeEnter : unAuthenticated,
     meta: {
       title: "Đổi mật khẩu",
       description:

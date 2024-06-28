@@ -4,10 +4,11 @@
       <sidebar></sidebar>
     </div>
     <div class="col-span-2 ">
-
-      <Form @submit="onSubmit" :validation-schema="emailotp" v-slot="{ errors }" class="grid grid-cols-1 md:grid-cols-3 items-end">
+      <Form @submit="onSubmit" :validation-schema="emailotp" v-slot="{ errors }"
+        class="grid grid-cols-1 md:grid-cols-3 items-end">
         <div class="col-span-2">
           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+          <div class="text-red-500">{{ errors.email }}</div>
           <Field name="email" type="text"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             :class="{
@@ -16,12 +17,13 @@
         ' border border-blue-500 text-blue-900  placeholder-blue-700':
           !errors.email,
       }" />
-          <div class="text-red-500">{{ errors.email }}</div>
+
         </div>
-        <Button type="submit" :disabled="isButtonDisabled" :text="OtpButton" :loading="loading" class="w-20 h-10 mx-4" ></Button>
+        <Button type="submit" :disabled="isButtonDisabled" :text="OtpButton" :loading="loading"
+          class="w-1/2 h-10 mx-4"></Button>
       </Form>
 
-      <Form  @submit="submitchangpassword" :validation-schema="changpassword" v-slot="{ errors }" class="my-3">
+      <Form @submit="submitchangpassword" :validation-schema="changpassword" v-slot="{ errors }" class="my-3">
         <div class="mb-5 w-40">
           <label>OTP</label>
           <Field name="otp" type="text"
@@ -32,7 +34,7 @@
         ' border border-blue-500 text-green-900 dark:text-green-400 placeholder-green-700':
           !errors.otp,
       }" />
-      <div class="text-red-500">{{ errors.otp }}</div>
+          <div class="text-red-500">{{ errors.otp }}</div>
         </div>
         <div class="mb-5">
           <label>Password</label>
@@ -70,6 +72,7 @@ import Sidebar from "@/components/account/sidebar.vue";
 import * as Yup from 'yup';
 import { Notyf } from "notyf";
 import { senotp, changpassword } from "@/services/authService";
+import store from '@/store';
 export default {
   name: "ForgetPassword",
   components: {
@@ -97,10 +100,13 @@ export default {
       isButtonDisabled: false,
       loading: false,
       ChangeButton: "Change Password",
-      OtpButton: "Sen Otp",
+      OtpButton: "Send Otp",
+
     };
   },
   methods: {
+
+    // send mail
     async onSubmit(values) {
       const otp = {
         email: values.email,
@@ -126,13 +132,17 @@ export default {
       }
     },
 
-
+    // update
     async submitchangpassword(values) {
       const data = {
         otp: values.otp,
         password: values.password,
       };
+<<<<<<< HEAD
       console.log(data);
+=======
+
+>>>>>>> c7e2f1776fb4add6cc7e8c6df5f04b90680ba9c4
       this.disabledButton = true;
       this.loading = true;
       this.SignupButton = "Loading...";
@@ -141,14 +151,21 @@ export default {
       try {
         const response = await changpassword(data);
         console.log("Success:", response);
-        notyf.success("changed password successfully!");
+        notyf.success(response.message);
+
+
+        store.dispatch('logout');
+        window.location.href = '/login?logout=true';
+
+
       } catch (error) {
-        console.error("Error:", error);
-        notyf.error("otp is not correct !");
+        console.error("Error update email :", error);
+        notyf.error(error.message);
       } finally {
         this.disabledButton = false;
         this.loading = false;
-        this.ChangeButton = "Send Otp";
+        this.ChangeButton = "Update Password";
+
       }
     },
 
