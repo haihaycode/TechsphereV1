@@ -71,7 +71,7 @@
         <div class="form-group form-check ">
           <Field name="acceptTerms" type="checkbox" id="acceptTerms" value="true" class="form-check-input"
             :class="{ 'is-invalid': errors.acceptTerms }" />
-          <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
+          <label for="acceptTerms" class="form-check-label"> &nbsp; Accept Terms & Conditions</label>
           <div class="text-red-500">{{ errors.acceptTerms }}</div>
         </div>
 

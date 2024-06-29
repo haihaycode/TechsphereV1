@@ -1,0 +1,8 @@
+.my-custom-active-class {
+  font-weight: bold;
+}
+
+.my-custom-exact-active-class {
+  font-weight: bold;
+  text-decoration: none;
+}

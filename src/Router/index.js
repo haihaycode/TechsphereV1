@@ -45,7 +45,18 @@ export const routes = [
       next('/');
     }
   }
-  , {
+  , 
+  {
+    path: '/account',
+    component: useComponent("Dashboard"),
+    beforeEnter: unAuthenticated,
+    meta: {
+      title: " Cá Nhân",
+      description: "This is a collection of examples to showcase the features of VeeValidate"
+    },
+    exact: true  // Đảm bảo route này được xác định là exact
+  },
+  {
     path: '/account/info',
     component: useComponent("UserInformation"),
     beforeEnter : unAuthenticated,
@@ -69,8 +80,10 @@ export const routes = [
   ];
   
   const router = createRouter({
-    history: createWebHistory(process.env.BASE_URL),
-  routes
+  history: createWebHistory(process.env.BASE_URL),
+  routes,
+  linkActiveClass: 'my-custom-active-class',
+  linkExactActiveClass: 'my-custom-exact-active-class',
 });
 
 

@@ -24,3 +24,15 @@ export function formatDateTimeCountdown(dateTime) {
   export function formatDateTime(dateTime) {
     return moment(dateTime).format(' HH:mm:ss DD/MM/YYYY');
   }
+
+
+  export function formattedDateTime() {
+    const currentDate = new Date();
+    const options = {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'numeric',
+      year: 'numeric'
+    };
+    return currentDate.toLocaleDateString('vi-VN', options);
+  }

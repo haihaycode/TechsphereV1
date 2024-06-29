@@ -4,6 +4,7 @@ import './assets/style.css';
 import store from './store';
 import router from './Router';
 import 'notyf/notyf.min.css';
+import './assets/css/activeCustumStyle.css';
 import { Field, Form, configure } from 'vee-validate'; // Import các thành phần cụ thể cần sử dụng
 
 configure({ validateOnInput: true }); // Cấu hình vee-validate

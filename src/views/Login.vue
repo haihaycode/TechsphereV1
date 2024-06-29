@@ -40,6 +40,11 @@
                     <div class="text-red-500">{{ errors.acceptTerms }}</div>
                 </div>
                 <div class="form-group text-end">
+                    <router-link
+                        class="py-2.5 px-5 me-2 text-sm font-medium rounded-lg inline-flex items-center bg-zinc-200  text-black "
+                        to="/register">
+                        Create an account now
+                    </router-link>
                     <Button type="submit" :disabled="isButtonDisabled" :text="LoginButton" :loading="loading" />
                 </div>
             </Form>
@@ -55,6 +60,7 @@ import { Form, Field } from 'vee-validate';
 import * as Yup from 'yup';
 import { Notyf } from 'notyf';
 import { login, saveToken } from '@/services/authService';
+import router from '@/Router';
 
 export default {
     name: 'LoginRegister',
@@ -93,7 +99,9 @@ export default {
             try {
                 const response = await login(loginData);
                 saveToken(response.accessToken, values.acceptTerms);
-                notyf.success('Login successfully !');
+
+                await notyf.success('Login successfully !');
+                router.push("/");
             } catch (error) {
                 console.error('Error:', error);
                 notyf.error('Login failed !');

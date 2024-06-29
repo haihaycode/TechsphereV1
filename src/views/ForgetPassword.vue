@@ -3,11 +3,11 @@
     <div class="w-full">
       <sidebar></sidebar>
     </div>
-    <div class="col-span-2 ">
+    <div class="col-span-2 mx-2">
       <Form @submit="onSubmit" :validation-schema="emailotp" v-slot="{ errors }"
         class="grid grid-cols-1 md:grid-cols-3 items-end">
         <div class="col-span-2">
-          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
           <div class="text-red-500">{{ errors.email }}</div>
           <Field name="email" type="text"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -20,7 +20,7 @@
 
         </div>
         <Button type="submit" :disabled="isButtonDisabled" :text="OtpButton" :loading="loading"
-          class="w-1/2 h-10 mx-4"></Button>
+          class="w-full md:w-1/2 h-10 md:mx-2 md:my-0 my-2"></Button>
       </Form>
 
       <Form @submit="submitchangpassword" :validation-schema="changpassword" v-slot="{ errors }" class="my-3">
@@ -100,7 +100,7 @@ export default {
       isButtonDisabled: false,
       loading: false,
       ChangeButton: "Change Password",
-      OtpButton: "Send Otp",
+      OtpButton: "Send OTP",
 
     };
   },
@@ -128,7 +128,7 @@ export default {
       } finally {
         this.disabledButton = false;
         this.loading = false;
-        this.OtpButton = "Send Otp";
+        this.OtpButton = "Send OTP";
       }
     },
 

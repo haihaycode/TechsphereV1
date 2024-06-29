@@ -2,7 +2,7 @@
 
 import { createLogger, createStore } from 'vuex';
 import Cookies from 'js-cookie';
-
+import router from '@/Router';
 const debug = process.env.NODE_ENV !== 'production';
 
 const store = createStore({
@@ -40,11 +40,16 @@ const store = createStore({
       commit('SET_TOKEN', null);
       commit('SET_LOGIN_STATUS', false);
       Cookies.remove('authToken');
+      router.push('/login');
+
     },
   },
   getters: {
     getToken(state) {
       return state.token;
+    },
+    isLogin(state) {
+      return state.isLogin;
     },
   },
   plugins: debug ? [createLogger()] : [],
