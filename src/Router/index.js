@@ -1,6 +1,7 @@
 // router/index.js
 
-import { createRouter, createWebHistory } from 'vue-router';
+// import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router';
 import { isAuthenticated,unAuthenticated } from '@/middleware/auth';
 import { logout } from '@/utils/auth';
 
@@ -8,6 +9,7 @@ import { logout } from '@/utils/auth';
 
 
 const useComponent = component => () => import(`../views/${component}.vue`);
+const isProduction = process.env.NODE_ENV === 'production';
 
 export const routes = [
   {
@@ -80,7 +82,8 @@ export const routes = [
   ];
   
   const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  // history: createWebHistory(process.env.BASE_URL),
+  history: isProduction ? createWebHashHistory() : createWebHistory(),
   routes,
   linkActiveClass: 'my-custom-active-class',
   linkExactActiveClass: 'my-custom-exact-active-class',
