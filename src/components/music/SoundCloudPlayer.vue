@@ -34,7 +34,7 @@
 
 
         <Button v-if="!allTracksLoaded" @click="loadMore" :disabled="isButtonDisabled" :text="buttonText"
-            :loading="loading" class="mt-2 " />
+            :loading="loading" class="mt-2" />
 
         <!-- Modal or Player Component -->
         <Player v-if="currentTrack" :currentTrack="currentTrack" @close-player="handleClosePlayer" />
