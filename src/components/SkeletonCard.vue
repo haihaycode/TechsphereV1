@@ -31,10 +31,11 @@ export default {
         text: {
             type: String,
             default: 'Đang tải'
-        }, count: {
+        },
+        count: {
             type: Number,
-            default: 8,
-           
+            default: 1,
+
         },
         loading: {
             type: Boolean,
