@@ -1,12 +1,11 @@
 <template>
-    <div v-if="currentTrack && currentTrack.preview_url"
-        class="fixed bottom-0 left-0 right-0 p-4 bg-white shadow-md player-container ">
+    <div v-if="currentTrack" class="fixed bottom-0 left-0 right-0 p-4 bg-white shadow-md player-container ">
 
         <div class="flex justify-between">
 
             <div>
-                <h3 class="text-lg font-semibold mb-2">{{ currentTrack.name }}</h3>
-                <p class="text-gray-600">{{ currentTrack.artists.map(artist => artist.name).join(', ') }}</p>
+                <h3 class="text-lg font-semibold mb-2">{{ currentTrack.title }}</h3>
+                <p class="text-gray-600">{{ currentTrack.title }}</p>
             </div>
             <a @click="closePlayer" class="mt-2 ">
                 <svg class=" inset-0 w-5 h-5  text-gray-500 hover:text-red-600 hover:bg-slate-50 " fill="currentColor"
@@ -16,7 +15,7 @@
             </a>
         </div>
 
-        <audio controls :src="currentTrack.preview_url" class="w-full mt-4"></audio>
+        <audio controls :src="currentTrack.tool.music.download_url" class="w-full mt-4"></audio>
 
     </div>
 
