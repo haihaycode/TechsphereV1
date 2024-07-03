@@ -19,11 +19,10 @@ app.component('Form', Form);
 router.beforeEach((to, from, next) => {
     document.title = to.meta.title || '404 - Not Found';
     next();
-});
+  });
 
 
-store.dispatch('checkToken');
-
+store.dispatch('checkToken');//dispatch tới checkToken để kiểm tra token có lưu trong cookie không rồi set vào state 
 app.use(router);
 app.use(store);
 

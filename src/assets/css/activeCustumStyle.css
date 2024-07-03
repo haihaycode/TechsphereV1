@@ -6,3 +6,12 @@
   font-weight: bold;
   text-decoration: none;
 }
+
+.custom-transition-enter-active,
+.custom-transition-leave-active {
+  transition: opacity 0.5s;
+}
+.custom-transition-enter,
+.custom-transition-leave-to {
+  opacity: 0;
+}
