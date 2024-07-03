@@ -1,11 +1,10 @@
 <template>
     <div v-if="!loading">
-        <div v-if="currentTrack" class="fixed bottom-0 left-0 right-0 p-4 bg-white shadow-md player-container">
+        <div v-if="audio" class="fixed bottom-0 left-0 right-0 p-4 bg-white shadow-md player-container">
             <div class="flex justify-between">
                 <div>
                     <div class="flex justify-start">
                         <h3 class="text-lg font-semibold mb-2 mx-2">{{ audio ? audio.music.title : '' }}</h3>
-                        <span>like : {{ audio ? audio.music.likes_count : '0' }} </span>
                     </div>
                     <p class="text-gray-600 mx-2">{{ audio ? audio.users.username : '' }}</p>
                 </div>
@@ -17,7 +16,6 @@
                     </svg>
                 </a>
             </div>
-
             <audio controls v-if="audio && audio.music" class="w-full mt-4" :src="audio.music.download_url"></audio>
         </div>
 
@@ -93,6 +91,7 @@ export default {
 
     watch: {
         currentTrack() {
+            this.audio = null;
             this.playTrack(this.currentTrack);
         }
     }
