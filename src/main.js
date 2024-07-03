@@ -5,6 +5,9 @@ import store from './store';
 import router from './Router';
 import 'notyf/notyf.min.css';
 import './assets/css/activeCustumStyle.css';
+
+
+
 import { Field, Form, configure } from 'vee-validate'; // Import các thành phần cụ thể cần sử dụng
 
 configure({ validateOnInput: true }); // Cấu hình vee-validate
@@ -20,9 +23,11 @@ router.beforeEach((to, from, next) => {
     document.title = to.meta.title || '404 - Not Found';
     next();
   });
+  
 
 
 store.dispatch('checkToken');//dispatch tới checkToken để kiểm tra token có lưu trong cookie không rồi set vào state 
+
 app.use(router);
 app.use(store);
 

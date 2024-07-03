@@ -1,6 +1,7 @@
 <template>
     <div v-if="!loading">
-        <div v-if="audio" class="fixed bottom-0 left-0 right-0 p-4 bg-white shadow-md player-container ">
+        <div v-if="audio"
+            class="fixed bottom-0 left-0 right-0 p-4 bg-white shadow-md player-container overflow-y-scroll ">
             <div class="flex justify-between">
                 <div>
                     <div class="flex justify-start">
@@ -8,7 +9,7 @@
         audio.music.title : '' }}</h3>
                         <button @click="toggleMore"
                             class=" px-4  text-black rounded-md flex items-start justify-center">
-                            <svg v-if="!showMore" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
+                            <svg v-if="showMore" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M19 9l-7 7-7-7"></path>
@@ -34,21 +35,61 @@
                 <div v-if="showMore" class="mt-4 text-gray-800 grid grid-cols-1 sm:grid-cols-3 gap-4 player-container">
                     <div class=" col-span-1">
 
-                        <img class="w-full h-full p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500 animate-spin-slow    "
-                            :src="audio.music.thumbnail" alt="Bordered avatar">
 
                     </div>
-                    <div class="col-span-2">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error aspernatur illum consequuntur
-                        reprehenderit perferendis excepturi quas quod dolor est architecto qui explicabo quo, cupiditate
-                        rem sed pariatur quos distinctio soluta.
+                    <div class="col-span-2 bg-white p-4 rounded-lg shadow-md "
+                        style="height: 250px; overflow-y: scroll;">
+                        <div class="flex items-center space-x-4">
+                            <img :src="audio.music.thumbnail" alt="Thumbnail" class="w-20 h-20 rounded-lg bg-gray-200">
+                            <div>
+                                <h2 class="text-blue-500 text-lg font-semibold">{{ audio.music.title }}</h2>
+                                <p class="text-gray-500 text-sm">User: {{ audio.users.id }} -
+                                    <a :href="audio.users.ermalink_url" target="_blank">{{ audio.users.username }}</a>
+                                </p>
+                                <a :href="audio.music.url" target="_blank" class="text-blue-500">Listen on
+                                    SoundCloud</a>
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <p class="text-gray-900"><strong>Description:</strong>{{ audio.music.descriptions == '' ?
+        'no descriptions ' : audio.music.descriptions }}</p>
+                            <p class="text-gray-900"><strong>Genres:</strong> {{ audio.music.genres ==
+        '' ?
+        '(No Genre) ' : audio.music.genres }}</p>
+                            <p class="text-gray-900"><strong>License:</strong> All Rights Reserved</p>
+                            <p class="text-gray-900"><strong>Duration:</strong> {{ audio.music.duration ==
+        '' ?
+        '(No duration) ' : audio.music.duration }}</p>
+                            <p class="text-gray-900"><strong>Likes:</strong>{{ audio.music.likes_count ==
+        '' ?
+        '(No like) ' : audio.music.likes_count }} </p>
+                            <p class="text-gray-900"><strong>Reposts:</strong> {{ audio.music.reposts_count ==
+        '' ? '(No reports) ' : audio.music.reposts_count }} </p>
+                            <p class="text-gray-900"> <strong>Plays :</strong> {{ audio.music.playback_count == '' ?
+                                'No play' : audio.music.playback_count
+                                }}</p>
+
+                            <p class="text-gray-900"><strong>Created At:</strong> {{ audio.music.created_at }}</p>
+                        </div>
                     </div>
                 </div>
 
 
             </div>
 
-            <audio controls v-if="audio && audio.music" class="w-full mt-4" :src="audio.music.download_url"></audio>
+            <div @click="toggleMore" class=" px-4  text-black rounded-md flex items-start justify-end  ">
+                <svg v-if="showMore" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+                <svg v-else class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7">
+                    </path>
+                </svg>
+            </div>
+
+            <CustomAudioPlayer controls v-if="audio && audio.music" class="w-full mt-4" :audio="audio">
+            </CustomAudioPlayer>
 
 
         </div>
@@ -71,11 +112,15 @@
 
 <script>
 import axios from 'axios';
-import SkeletonCard from '@/components/SkeletonCard.vue'
+import SkeletonCard from '@/components/SkeletonCard.vue';
+import CustomAudioPlayer from '@/components/music/CustomAudioPlayer.vue';
 export default {
     name: 'PlayerComponents',
     components: {
-        SkeletonCard
+        SkeletonCard,
+        // eslint-disable-next-line vue/no-unused-components
+        CustomAudioPlayer
+
     },
     props: {
         currentTrack: String // Nhận vào URL của bài hát
@@ -119,11 +164,11 @@ export default {
         toggleMore() {
             this.showMore = !this.showMore; // Chuyển đổi trạng thái hiển thị lời bài hát
         },
-
         closePlayer() {
             this.audio = null; // Đặt lại audio về null khi đóng player
             this.$emit('close-player'); // Phát sự kiện để đóng player
-        }
+        },
+
     },
 
     watch: {
@@ -138,8 +183,7 @@ export default {
 <style scoped>
 .player-container {
     padding: 1rem;
-    background-color: #ffffff;
-    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
+
     /* Điều chỉnh shadow nếu cần */
     transform: translateY(100%);
     animation: bottomToTop 0.3s ease forwards;

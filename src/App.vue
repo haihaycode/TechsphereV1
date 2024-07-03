@@ -2,7 +2,9 @@
   <div id="app">
     <Header></Header>
     <transition name="slide-fade" mode="out-in" v-on:before-enter="beforeEnter" v-on:enter="enter" v-on:leave="leave">
-      <router-view />
+      <div>
+        <router-view />
+      </div>
     </transition>
     <Footer></Footer>
   </div>

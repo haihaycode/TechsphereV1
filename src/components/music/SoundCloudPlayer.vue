@@ -19,8 +19,9 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div v-for="track in tracks" :key="track.url" @click="selectTrack(track.url)"
                 class=" p-4 bg-white rounded-lg shadow-md cursor-pointer grid grid-cols-2 overflow-hidden">
-                <div class="relative w-2/3 ml-2">
-                    <!-- <Image :srcImage="track.image" class="w-full h-full object-cover rounded-md max-h-full" /> -->
+                <div class="relative w-3/3 ml-2 mr-2">
+                    <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/newscms/2019_09/2769481/190228-headphones-music-se-152p.jpg"
+                        class="w-full h-full object-cover rounded-md max-h-full" />
 
                     <svg class="absolute inset-0 w-full h-12 m-auto text-gray-100 opacity-70" fill="currentColor"
                         viewBox="0 0 24 24" stroke="currentColor">
@@ -28,8 +29,8 @@
                     </svg>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-2">{{ track.title }}</h3>
-                    <p class="text-gray-600">{{ track.user.username }}</p>
+                    <h3 class="text-lg font-semibold mb-2 truncate leading-6">{{ track.title }}</h3>
+                    <p class="text-gray-600 truncate leading-6">{{ track.user.username }}</p>
                 </div>
             </div>
             <SkeletonCard :loading="loading" />
