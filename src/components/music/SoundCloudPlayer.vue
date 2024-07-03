@@ -1,7 +1,7 @@
 <template>
     <div class="container mx-auto px-2 mt-8">
         <div class="relative mb-3">
-            <input type="text" v-model="searchTerm" placeholder="Search songs..."
+            <input type="text" v-model="searchTerm" placeholder="Search songs..." @keyup.enter="searchTracks"
                 class="w-full px-4 py-2 rounded-md shadow-sm focus:outline-none" />
             <button v-if="searchTerm" @click="clearSearchTerm"
                 class="absolute inset-y-0 right-0 px-2 flex items-center focus:outline-none">
@@ -18,7 +18,7 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div v-for="track in tracks" :key="track.url" @click="selectTrack(track.url)"
-                class=" p-4 bg-white rounded-lg shadow-md cursor-pointer grid grid-cols-2">
+                class=" p-4 bg-white rounded-lg shadow-md cursor-pointer grid grid-cols-2 overflow-hidden">
                 <div class="relative w-2/3 ml-2">
                     <!-- <Image :srcImage="track.image" class="w-full h-full object-cover rounded-md max-h-full" /> -->
 
