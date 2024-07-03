@@ -16,23 +16,23 @@ export const login = async (loginData) => {
 };
 
 export const register = async (registerData) => {
-    try {
-      const response = await axios.post(`${API_URL}/signup`, registerData);
-      return response.data;
-    } catch (error) {
-      throw new Error(error.response ? error.response.data.message : error.message);
-    }
-  };
+  try {
+    const response = await axios.post(`${API_URL}/signup`, registerData);
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response ? error.response.data.message : error.message);
+  }
+};
 
 export const saveToken = (token, rememberMe) => {
   if (rememberMe) {
     Cookies.set('authToken', token, { expires: 5 / 24 }); // 5 hours
-  } 
+  }
   Cookies.set('authToken', token, { expires: 1 / 24 }); // 5 hours
   store.commit('SET_LOGIN_STATUS', true);
   store.commit('SET_TOKEN', token);
- 
-  
+
+
 };
 
 export const accountService = async () => {
@@ -65,7 +65,7 @@ export const getAvatar = async (image) => {
       headers: {
         Authorization: `Bearer ${token}`
       },
-      responseType: 'arraybuffer' 
+      responseType: 'arraybuffer'
     });
 
     const base64Image = arrayBufferToBase64(response.data);
@@ -74,6 +74,7 @@ export const getAvatar = async (image) => {
     throw new Error(error.response ? error.response.data.message : error.message);
   }
 };
+
 
 function arrayBufferToBase64(buffer) {
   let binary = '';
@@ -138,7 +139,7 @@ export const changpassword = async (data) => {
     console.log(data);
     const response = await axios.post(`${API_URL}/verify`, data, {
       headers: {
-         Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       }
     });
     return response.data;
@@ -148,7 +149,7 @@ export const changpassword = async (data) => {
 };
 
 export const updateAvatar = async (file) => {
-  const token = store.state.token; 
+  const token = store.state.token;
   if (!token) {
     throw new Error('No token found');
   }
@@ -167,3 +168,15 @@ export const updateAvatar = async (file) => {
     throw new Error(error.response ? error.response.data.message : error.message);
   }
 };
+
+
+export const getAllCategory = async () => {
+  try {
+    const response = await axios.get('http://localhost:8080/api/public/client/categories');
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response ? error.response.data.message : error.message);
+  }
+};
+
+
