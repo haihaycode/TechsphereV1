@@ -20,7 +20,7 @@
             <div v-for="track in tracks" :key="track.url" @click="selectTrack(track.url)"
                 class=" p-4 bg-white rounded-lg shadow-md cursor-pointer grid grid-cols-2">
                 <div class="relative w-2/3 ml-2">
-                    <Image :srcImage="track.image" class="w-full h-full object-cover rounded-md max-h-full" />
+                    <!-- <Image :srcImage="track.image" class="w-full h-full object-cover rounded-md max-h-full" /> -->
 
                     <svg class="absolute inset-0 w-full h-12 m-auto text-gray-100 opacity-70" fill="currentColor"
                         viewBox="0 0 24 24" stroke="currentColor">
@@ -44,14 +44,14 @@ import axios from 'axios';
 import Player from '@/components/music/Player.vue'; // Đường dẫn tới component Player
 import SkeletonCard from '@/components/SkeletonCard.vue'
 import Button from '@/components/button.vue';
-import Image from '@/components/image.vue';
+// import Image from '@/components/image.vue';
 
 export default {
     components: {
         Player,
         SkeletonCard,
         Button,
-        Image
+        // Image
     },
     data() {
         return {
@@ -84,11 +84,6 @@ export default {
 
                 this.tracks = [...response.data.result];
 
-                for (let track of this.tracks) {
-                    const trackDetails = await this.fetchTrackDetails(track.url);
-                    track.image = trackDetails.music.thumbnail; // Gán URL hình ảnh
-                    track.tool = trackDetails; // Gán đối tượng chi tiết bài hát vào track.tool
-                }
 
                 this.allTracksLoaded = this.tracks.length < this.limit;
                 console.log(this.tracks)
@@ -98,18 +93,7 @@ export default {
                 this.loading = false;
             }
         },
-        async fetchTrackDetails(url) {
-            try {
-                const response = await axios.get(`${this.apiBaseUrl}/track`, {
-                    params: {
-                        url: url
-                    }
-                });
-                return response.data;
-            } catch (error) {
-                console.error('Error fetching track details:', error);
-            }
-        },
+
         async loadMore() {
             try {
                 this.loading = true;
