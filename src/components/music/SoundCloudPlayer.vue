@@ -2,18 +2,23 @@
     <div class="container mx-auto px-2 mt-8">
         <div class="relative mb-3">
             <input type="text" v-model="searchTerm" placeholder="Search songs..."
-                class="w-full px-4 py-2 rounded-md shadow-sm focus:outline-none" @input="searchTracks" />
+                class="w-full px-4 py-2 rounded-md shadow-sm focus:outline-none" />
             <button v-if="searchTerm" @click="clearSearchTerm"
-                class="absolute inset-y-0 right-0 px-3 flex items-center focus:outline-none">
+                class="absolute inset-y-0 right-0 px-2 flex items-center focus:outline-none">
                 <svg class="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
                     </path>
                 </svg>
             </button>
+
+            <button v-if="searchTerm" @click="searchTracks"
+                class="absolute inset-y-0 right-7 px-2  flex items-center focus:outline-none">
+                Tìm kiếm
+            </button>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div v-for="track in tracks" :key="track.url" @click="selectTrack(track)"
-                class="p-4 bg-white rounded-lg shadow-md cursor-pointer grid grid-cols-2">
+            <div v-for="track in tracks" :key="track.url" @click="selectTrack(track.url)"
+                class=" p-4 bg-white rounded-lg shadow-md cursor-pointer grid grid-cols-2">
                 <div class="relative w-2/3 ml-2">
                     <Image :srcImage="track.image" class="w-full h-full object-cover rounded-md max-h-full" />
 
@@ -52,7 +57,7 @@ export default {
         return {
             tracks: [], // Mảng lưu các bài hát được tải
             searchTerm: '', // Từ khóa tìm kiếm nhập bởi người dùng
-            limit: 10, // Số lượng bài hát được tải mỗi lần
+            limit: 20, // Số lượng bài hát được tải mỗi lần
             allTracksLoaded: false, // Cờ chỉ ra liệu tất cả các bài hát đã được tải hay chưa
             apiBaseUrl: 'https://ditmemaykkkk.com/api/soundcloud', // Địa chỉ cơ sở của API
             currentTrack: null,// Bài hát đang được chọn để phát
@@ -132,15 +137,16 @@ export default {
                 this.loading = false;
             }
         },
-        playTrack(track) {
-            this.currentTrack = track;
+        playTrack(trackUrl) {
+            this.currentTrack = trackUrl;
+
         },
         searchTracks() {
             this.tracks = [];
             this.fetchTracks();
         },
-        selectTrack(track) {
-            this.playTrack(track);
+        selectTrack(trackUrl) {
+            this.playTrack(trackUrl); // Gọi hàm playTrack và truyền vào trackUrl
         },
         clearSearchTerm() {
             this.searchTerm = '';

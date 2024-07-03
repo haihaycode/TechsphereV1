@@ -1,43 +1,101 @@
 <template>
-    <div v-if="currentTrack" class="fixed bottom-0 left-0 right-0 p-4 bg-white shadow-md player-container ">
-
-        <div class="flex justify-between">
-
-            <div>
-                <h3 class="text-lg font-semibold mb-2">{{ currentTrack.title }}</h3>
-                <p class="text-gray-600">{{ currentTrack.title }}</p>
+    <div v-if="!loading">
+        <div v-if="currentTrack" class="fixed bottom-0 left-0 right-0 p-4 bg-white shadow-md player-container">
+            <div class="flex justify-between">
+                <div>
+                    <div class="flex justify-start">
+                        <h3 class="text-lg font-semibold mb-2 mx-2">{{ audio ? audio.music.title : '' }}</h3>
+                        <span>like : {{ audio ? audio.music.likes_count : '0' }} </span>
+                    </div>
+                    <p class="text-gray-600 mx-2">{{ audio ? audio.users.username : '' }}</p>
+                </div>
+                <a @click="closePlayer" class="mt-2">
+                    <svg class="w-5 h-5 text-gray-500 hover:text-red-600 hover:bg-slate-50" fill="currentColor"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </a>
             </div>
-            <a @click="closePlayer" class="mt-2 ">
-                <svg class=" inset-0 w-5 h-5  text-gray-500 hover:text-red-600 hover:bg-slate-50 " fill="currentColor"
-                    viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </a>
+
+            <audio controls v-if="audio && audio.music" class="w-full mt-4" :src="audio.music.download_url"></audio>
         </div>
 
-        <audio controls :src="currentTrack.tool.music.download_url" class="w-full mt-4"></audio>
 
+
+        <div v-else class="fixed bottom-0 left-0 right-0 p-4 bg-white shadow-md">
+            <p class="text-red-500">Không thể phát nhạc từ bài hát này.</p>
+        </div>
     </div>
 
 
-    <div v-else class="fixed bottom-0 left-0 right-0 p-4 bg-white shadow-md">
-        <p class="text-red-500">Không thể phát nhạc từ bài hát này.</p>
+
+    <div v-else class="fixed bottom-0 left-0 right-0 p-4  bg-white shadow-md player-container ">
+        <SkeletonCard :loading="loading" />
     </div>
+
+
 </template>
 
 <script>
-
+import axios from 'axios';
+import SkeletonCard from '@/components/SkeletonCard.vue'
 export default {
-    name: "PlayerComponent",
-    props: {
-        currentTrack: Object // Prop nhận vào thông tin của bài hát đang được phát
+    name: 'PlayerComponents',
+    components: {
+        SkeletonCard
     },
+    props: {
+        currentTrack: String // Nhận vào URL của bài hát
+    },
+
+    data() {
+        return {
+            audio: null, // Source audio để phát bài hát
+
+            loading: true
+        };
+    },
+
     methods: {
+        async fetchTrackDetails(trackUrl) {
+            this.loading = true;
+            try {
+                const response = await axios.get(`https://ditmemaykkkk.com/api/soundcloud/track`, {
+                    params: {
+                        url: trackUrl
+                    }
+                });
+                return response.data;
+            } catch (error) {
+                console.error('Error fetching track details:', error);
+            } finally {
+                this.loading = false
+            }
+        },
+
+        async playTrack(trackUrl) {
+            const trackDetails = await this.fetchTrackDetails(trackUrl);
+            if (trackDetails) {
+                // Xử lý phát nhạc từ trackDetails
+                console.log('Thông tin chi tiết của bài hát:', trackDetails);
+                this.audio = trackDetails;
+            } else {
+                console.error('Không thể lấy thông tin chi tiết của bài hát.');
+            }
+        },
+
         closePlayer() {
-            this.$emit('close-player'); // Phát sự kiện để thông báo cho component cha đóng player
+            this.audio = null; // Đặt lại audio về null khi đóng player
+            this.$emit('close-player'); // Phát sự kiện để đóng player
         }
     },
 
+    watch: {
+        currentTrack() {
+            this.playTrack(this.currentTrack);
+        }
+    }
 };
 </script>
 
