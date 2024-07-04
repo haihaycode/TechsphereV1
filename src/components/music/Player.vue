@@ -37,8 +37,7 @@
 
 
                     </div>
-                    <div class="col-span-2 bg-white p-4 rounded-lg shadow-md "
-                        style="height: 250px; overflow-y: scroll;">
+                    <div class="col-span-2 rounded-lg " style="height: 250px; overflow-y: scroll;">
                         <div class="flex items-center space-x-4">
                             <img :src="audio.music.thumbnail" alt="Thumbnail" class="w-20 h-20 rounded-lg bg-gray-200">
                             <div>
@@ -125,6 +124,9 @@ export default {
     props: {
         currentTrack: String // Nhận vào URL của bài hát
     },
+    mounted() {
+        this.playTrack(this.currentTrack);
+    },
 
     data() {
         return {
@@ -176,7 +178,8 @@ export default {
             this.audio = null;
             this.playTrack(this.currentTrack);
         }
-    }
+    },
+
 };
 </script>
 

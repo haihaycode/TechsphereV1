@@ -20,7 +20,7 @@
             <div v-for="track in tracks" :key="track.url" @click="selectTrack(track.url)"
                 class=" p-4 bg-white rounded-lg shadow-md cursor-pointer grid grid-cols-2 overflow-hidden">
                 <div class="relative w-3/3 ml-2 mr-2">
-                    <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/newscms/2019_09/2769481/190228-headphones-music-se-152p.jpg"
+                    <img src="https://solution.com.vn/upload_images/images/2021/12/logo-am-nhac/logo-am-nhac-2.jpg"
                         class="w-full h-full object-cover rounded-md max-h-full" />
 
                     <svg class="absolute inset-0 w-full h-12 m-auto text-gray-100 opacity-70" fill="currentColor"
@@ -58,7 +58,7 @@ export default {
         return {
             tracks: [], // Mảng lưu các bài hát được tải
             searchTerm: '', // Từ khóa tìm kiếm nhập bởi người dùng
-            limit: 20, // Số lượng bài hát được tải mỗi lần
+            limit: 100, // Số lượng bài hát được tải mỗi lần
             allTracksLoaded: false, // Cờ chỉ ra liệu tất cả các bài hát đã được tải hay chưa
             apiBaseUrl: 'https://ditmemaykkkk.com/api/soundcloud', // Địa chỉ cơ sở của API
             currentTrack: null,// Bài hát đang được chọn để phát
@@ -131,7 +131,7 @@ export default {
             this.fetchTracks();
         },
         selectTrack(trackUrl) {
-            this.playTrack(trackUrl); // Gọi hàm playTrack và truyền vào trackUrl
+            this.playTrack(trackUrl);
         },
         clearSearchTerm() {
             this.searchTerm = '';
