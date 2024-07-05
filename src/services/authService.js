@@ -179,4 +179,12 @@ export const getAllCategory = async () => {
   }
 };
 
+export const FindCategory = async (keywords) => {
+  try {
+    const response = await axios.post('http://localhost:8080/api/auth/categories', keywords);
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response ? error.response.data.message : error.message);
+  }
+};
 

@@ -190,6 +190,7 @@ export default {
     async loadImage() {
       try {
         const response = await getAvatar(this.account.profilePicture);
+        console.log(this.account.profilePicture);
         this.account.photo = response;
         this.account.profilePicture = response;
       } catch (error) {

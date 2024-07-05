@@ -37,7 +37,9 @@
   </div> -->
 
   <ListCategories />
-
+  <PostofcategoryVue/>
+  <remarkablepost/>
+  <Newspost/>
   <div class="bg-gray-100 md:px-10 px-4 py-12 font-[sans-serif]">
     <div class="container mx-auto">
       <h2 class="text-3xl font-extrabold text-gray-800 mb-8">
@@ -72,6 +74,7 @@
       </div>
     </div>
   </div>
+  <SoundCloudPlayer></SoundCloudPlayer>
 </template>
 <script>
 // import Button from '@/components/button.vue';
@@ -84,6 +87,10 @@ import {
   formatDateTime,
 } from "@/helper/datetimeHelper.js";
 import ListCategories from "@/components/ListCategories.vue";
+import SoundCloudPlayer from "@/components/music/SoundCloudPlayer.vue";
+import PostofcategoryVue from "@/components/post/postofcategory.vue";
+import Newspost from "@/components/post/newspostupdate.vue";
+import Remarkablepost from '@/components/post/remarkablepost.vue';
 // import { account } from '@/services/authService'
 export default {
   name: "HomePage",
@@ -93,7 +100,11 @@ export default {
     //
     Image,
     //
+    Newspost,
+    SoundCloudPlayer,
     ListCategories,
+    PostofcategoryVue,
+    Remarkablepost,
   },
   data() {
     return {

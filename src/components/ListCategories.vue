@@ -75,7 +75,7 @@ export default {
       try {
         const response = await getAllCategory();
         this.categories = response.data;
-        console.log(this.categories);
+        // console.log(this.categories);
       } catch (error) {
         console.error("Failed to load account:", error);
       }
