@@ -87,7 +87,7 @@ import {
   formatDateTime,
 } from "@/helper/datetimeHelper.js";
 import ListCategories from "@/components/ListCategories.vue";
-import SoundCloudPlayer from "@/components/music/SoundCloudPlayer.vue";
+import SoundCloudPlayer from "@/components/tools/music/SoundCloudPlayer.vue";
 import PostofcategoryVue from "@/components/post/postofcategory.vue";
 import Newspost from "@/components/post/newspostupdate.vue";
 import Remarkablepost from '@/components/post/remarkablepost.vue';
