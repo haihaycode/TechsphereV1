@@ -71,7 +71,7 @@
   <ListCategories />
 
 
-  <SoundCloudPlayer></SoundCloudPlayer>
+
 
 
 
@@ -90,7 +90,7 @@ import axios from 'axios';
 import { truncateDescription } from '@/helper/StringHelper.js'
 import { formatDateTimeCountdown, formatDateTime } from '@/helper/datetimeHelper.js'
 import ListCategories from '@/components/ListCategories.vue';
-import SoundCloudPlayer from '@/components/music/SoundCloudPlayer.vue';
+
 // import { account } from '@/services/authService'
 export default {
   name: 'HomePage',
@@ -102,8 +102,7 @@ export default {
     //
     ListCategories,
 
-    // eslint-disable-next-line vue/no-unused-components
-    SoundCloudPlayer
+
 
   },
   data() {

@@ -112,7 +112,7 @@
 <script>
 import axios from 'axios';
 import SkeletonCard from '@/components/SkeletonCard.vue';
-import CustomAudioPlayer from '@/components/music/CustomAudioPlayer.vue';
+import CustomAudioPlayer from '@/components/tools/music/CustomAudioPlayer.vue';
 export default {
     name: 'PlayerComponents',
     components: {
