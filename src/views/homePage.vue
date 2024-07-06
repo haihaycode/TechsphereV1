@@ -37,9 +37,47 @@
   </div> -->
 
   <ListCategories />
-  <PostofcategoryVue/>
-  <remarkablepost/>
-  <Newspost/>
+
+  <!-- quảng cáo -->
+  <div class="bg-gray-100 md:px-10 px-4 py-12 font-[sans-serif]">
+    <div
+      style="
+        position: relative;
+        margin: 0 auto;
+        max-width: 1160px;
+        width: 100%;
+        height: auto;
+      "
+    >
+      <a
+        style="
+          width: 100%;
+          max-width: 1160px;
+          display: flex;
+          justify-content: center;
+          overflow: hidden;
+        "
+        rel="nofollow"
+        href="//lg1.logging.admicro.vn/adn?dmn=https%3A%2F%2Fgenk.vn%2F&amp;rid=f72824b4-8007-4373-8532-02c93f7d6b12121-6688fe64&amp;sspb=40000&amp;sspr=1.6622&amp;lsn=1720254051312&amp;ce=1&amp;lc=5&amp;cr=1719912982&amp;ui=6819912982251552338&amp;dg=016683ca1883e71a66abdbdbfe5f52c6&amp;uuid=&amp;profileID=d63ac39d-5ba6-5e45-9c59-b6a63ffd715a&amp;bi=0&amp;cmpg=88873&amp;items=391192&amp;zid=511020&amp;pr=39214883880&amp;cid=-1&amp;tp=12&amp;tpn=4&amp;alg=1102&amp;dg=016683ca1883e71a66abdbdbfe5f52c6&amp;xtr=eyJhc2lkIjo0MDkwLCJwcm9maWxlaWQiOiJkNjNhYzM5ZC01YmE2LTVlNDUtOWM1OS1iNmE2M2ZmZDcxNWEiLCJwcmZuZyI6eyJ0aW1lIjoxNzIwMjU1ODUxLCJfdXBsIjoiMC02ODE5OTEyOTgyMjUxNTUyMzM4In19&amp;sspz=2013166&amp;adc_cpa=1&amp;cov=1&amp;re=https%3A%2F%2Fvn.msi.com%2FPromotion%2Flaptops-20th-anniversary%2Fnb"
+        target="_blank"
+        ><img
+          class="adnzone_511020_img"
+          border="0"
+          id="cpm511020"
+          src="//adi.admicro.vn/adt/adn/2024/07/banner-urkyuuGKL1.jpeg"
+          width="1160"
+          height="250" /></a
+      ><a
+        class="admLogoAdx511020"
+        href="http://adx.admicro.vn/?utm_source=Admicro&amp;utm_medium=genk.vn&amp;utm_campaign=adxzone"
+        target="_blank"
+        ><span class="txtlogo">Admicro AdX</span><span></span
+      ></a>
+    </div>
+  </div>
+  <PostofcategoryVue />
+  <remarkablepost />
+  <Newspost />
   <div class="bg-gray-100 md:px-10 px-4 py-12 font-[sans-serif]">
     <div class="container mx-auto">
       <h2 class="text-3xl font-extrabold text-gray-800 mb-8">
@@ -90,7 +128,7 @@ import ListCategories from "@/components/ListCategories.vue";
 import SoundCloudPlayer from "@/components/tools/music/SoundCloudPlayer.vue";
 import PostofcategoryVue from "@/components/post/postofcategory.vue";
 import Newspost from "@/components/post/newspostupdate.vue";
-import Remarkablepost from '@/components/post/remarkablepost.vue';
+import Remarkablepost from "@/components/post/remarkablepost.vue";
 // import { account } from '@/services/authService'
 export default {
   name: "HomePage",
