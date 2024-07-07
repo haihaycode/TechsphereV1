@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full md:w-1160 mx-auto">
-    <div class="flex flex-row gap-7">
+  <div class="w-full md:w-[1160px] mx-auto mt-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
       <div>
         <div>
           <img
@@ -8,7 +8,7 @@
             src="https://genk.mediacdn.vn/zoom/540_336/139269124445442048/2024/7/4/ps4-1653562798854-17201114607691774150088-0-59-720-1211-crop-172011146595844491969.jpg"
             alt="image loading...."
           />
-          <h1 class="font-bold" style="font-size: x-large">
+          <h1 class="font-bold text-xl">
             Sếp AMD thừa nhận: PlayStation 4 đã cứu AMD khỏi bờ vực phá sản
           </h1>
         </div>
@@ -22,7 +22,7 @@
               src="https://genk.mediacdn.vn/zoom/540_336/139269124445442048/2024/7/4/ps4-1653562798854-17201114607691774150088-0-59-720-1211-crop-172011146595844491969.jpg"
               alt="image loading...."
             />
-            <h1 class="font-bold" style="font-size: x-large">
+            <h1 class="font-bold text-xl">
               Sếp AMD thừa nhận: PlayStation 4 đã cứu AMD khỏi bờ vực phá sản
             </h1>
           </div>
@@ -32,13 +32,13 @@
               src="https://genk.mediacdn.vn/zoom/540_336/139269124445442048/2024/7/4/ps4-1653562798854-17201114607691774150088-0-59-720-1211-crop-172011146595844491969.jpg"
               alt="image loading...."
             />
-            <h1 class="font-bold" style="font-size: x-large">
+            <h1 class="font-bold text-xl">
               Sếp AMD thừa nhận: PlayStation 4 đã cứu AMD khỏi bờ vực phá sản
             </h1>
           </div>
         </div>
       </div>
-      <div class=" flex flex-row gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="col-span-1">
           <div>
             <img
@@ -60,7 +60,7 @@
                   src="https://genk.mediacdn.vn/zoom/540_336/139269124445442048/2024/7/4/ps4-1653562798854-17201114607691774150088-0-59-720-1211-crop-172011146595844491969.jpg"
                   alt="image loading...."
                 />
-                <h1 class="font-bold ml-3" style="font-size: 70%">
+                <h1 class="font-bold ml-3 text-xs">
                   Bất ngờ: Dat Bike "flex" cha đẻ ChatGPT Sam Altman chính là
                   một trong những người đầu
                 </h1>
@@ -74,7 +74,7 @@
                   src="https://genk.mediacdn.vn/zoom/540_336/139269124445442048/2024/7/4/ps4-1653562798854-17201114607691774150088-0-59-720-1211-crop-172011146595844491969.jpg"
                   alt="image loading...."
                 />
-                <h1 class="font-bold ml-3" style="font-size: 70%">
+                <h1 class="font-bold ml-3 text-xs">
                   Bất ngờ: Dat Bike "flex" cha đẻ ChatGPT Sam Altman chính là
                   một trong những người đầu
                 </h1>
@@ -88,7 +88,7 @@
                   src="https://genk.mediacdn.vn/zoom/540_336/139269124445442048/2024/7/4/ps4-1653562798854-17201114607691774150088-0-59-720-1211-crop-172011146595844491969.jpg"
                   alt="image loading...."
                 />
-                <h1 class="font-bold ml-3" style="font-size: 70%">
+                <h1 class="font-bold ml-3 text-xs">
                   Bất ngờ: Dat Bike "flex" cha đẻ ChatGPT Sam Altman chính là
                   một trong những người đầu
                 </h1>
@@ -101,12 +101,12 @@
           <div id="wrapperNative_0" onclick="addMoreLogging(this)">
             <div id="top-wrap">
               <div class="note-bg-red"></div>
-              <span> BẠN CẦN BIẾT</span>
+              <span>BẠN CẦN BIẾT</span>
             </div>
             <div class="line-split"></div>
             <div class="line-under-split"></div>
 
-            <div class="wrap-content" style="padding-top: 20px">
+            <div class="wrap-content pt-5">
               <div id="rightNative">
                 <div id="posterNative">
                   <img
@@ -118,8 +118,9 @@
                 <div id="contentNative">
                   <div id="titleNative">
                     <span
-                      >Khai Hoan Prime – Căn hộ ven sông liền kề Phú Mỹ Hưng
-                    </span>
+                      >Khai Hoan Prime – Căn hộ ven sông liền kề Phú Mỹ
+                      Hưng</span
+                    >
                   </div>
                   <div id="inforActive">
                     <div id="logo-wrap">
@@ -136,7 +137,7 @@
             </div>
           </div>
           <div id="wrapperNative_1" onclick="addMoreLogging(this)">
-            <div class="wrap-content" style="padding-top: 10px">
+            <div class="wrap-content pt-2.5">
               <div id="rightNative">
                 <div id="posterNative">
                   <img
@@ -149,8 +150,8 @@
                   <div id="titleNative">
                     <span
                       >Hè 0 độ - Trải nghiệm 0 giới hạn: DND ưu đãi tới 40% chi
-                      phí PTKX
-                    </span>
+                      phí PTKX</span
+                    >
                   </div>
                   <div id="inforActive">
                     <div id="logo-wrap">
@@ -168,7 +169,9 @@
               <div id="clickPopupNative"></div>
             </div>
             <div class="bottom-line"></div>
-            <div id="bottom-wrap"><span>Được tài trợ</span></div>
+            <div id="bottom-wrap">
+              <span>Được tài trợ</span>
+            </div>
           </div>
         </div>
       </div>
@@ -178,7 +181,7 @@
 <script>
 import { FindCategory } from "@/services/authService";
 export default {
-  name: "PostofCategory",
+  name: "PostofCategoryComponent",
   data() {
     return {
       search: "Ca Nhạc",
@@ -207,10 +210,10 @@ export default {
 
 
 <style>
-.w1160 {
+/* .w1160 {
   width: 1160px;
   margin: 0 auto;
-}
+} */
 
 .line li {
   padding-top: 18px;

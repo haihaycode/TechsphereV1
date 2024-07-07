@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full md:w-1160 mx-auto">
+  <div class="w-full md:w-[1160px] mx-auto">
     <div class="border-b border-gray-200 py-3">
       <h3 class="hotnews-label mb-5">
         <a
@@ -11,7 +11,7 @@
         >
       </h3>
       <div class="flex">
-        <ul class="grid grid-cols-4 gap-5">
+        <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
           <li>
             <div>
               <img
@@ -67,6 +67,6 @@
 </template>
 <script>
 export default {
-  name: "RemarkablePost",
+  name: "RemarkablePostComponent",
 };
 </script>

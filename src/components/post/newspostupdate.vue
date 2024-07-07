@@ -13,7 +13,7 @@
         </h3>
         <ul class="line">
           <li>
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <img
                 class="rounded-lg w-full"
                 src="https://genk.mediacdn.vn/zoom/540_336/139269124445442048/2024/7/4/ps4-1653562798854-17201114607691774150088-0-59-720-1211-crop-172011146595844491969.jpg"
@@ -28,7 +28,7 @@
                   >Tất tần tật những biến thể Deadpool sẽ xuất hiện trong bom
                   tấn sắp tới của MCU</a
                 >
-                <h1 class="text-gray-500" style="font-size: small">
+                <h1 class="text-gray-500 text-sm">
                   Đa vũ trụ sẽ đưa rất nhiều phiên bản Deadpool khác nhau lên
                   màn ảnh lớn trong siêu bom tấn Deadpool & Wolverine.
                 </h1>
@@ -37,7 +37,7 @@
             </div>
           </li>
           <li>
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <img
                 class="rounded-lg w-full"
                 src="https://genk.mediacdn.vn/zoom/540_336/139269124445442048/2024/7/4/ps4-1653562798854-17201114607691774150088-0-59-720-1211-crop-172011146595844491969.jpg"
@@ -52,7 +52,7 @@
                   >Tất tần tật những biến thể Deadpool sẽ xuất hiện trong bom
                   tấn sắp tới của MCU</a
                 >
-                <h1 class="text-gray-500" style="font-size: small">
+                <h1 class="text-gray-500 text-sm">
                   Đa vũ trụ sẽ đưa rất nhiều phiên bản Deadpool khác nhau lên
                   màn ảnh lớn trong siêu bom tấn Deadpool & Wolverine.
                 </h1>
@@ -61,7 +61,7 @@
             </div>
           </li>
           <li>
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <img
                 class="rounded-lg w-full"
                 src="https://genk.mediacdn.vn/zoom/540_336/139269124445442048/2024/7/4/ps4-1653562798854-17201114607691774150088-0-59-720-1211-crop-172011146595844491969.jpg"
@@ -76,7 +76,7 @@
                   >Tất tần tật những biến thể Deadpool sẽ xuất hiện trong bom
                   tấn sắp tới của MCU</a
                 >
-                <h1 class="text-gray-500" style="font-size: small">
+                <h1 class="text-gray-500 text-sm">
                   Đa vũ trụ sẽ đưa rất nhiều phiên bản Deadpool khác nhau lên
                   màn ảnh lớn trong siêu bom tấn Deadpool & Wolverine.
                 </h1>
@@ -85,7 +85,7 @@
             </div>
           </li>
           <li>
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <img
                 class="rounded-lg w-full"
                 src="https://genk.mediacdn.vn/zoom/540_336/139269124445442048/2024/7/4/ps4-1653562798854-17201114607691774150088-0-59-720-1211-crop-172011146595844491969.jpg"
@@ -100,7 +100,7 @@
                   >Tất tần tật những biến thể Deadpool sẽ xuất hiện trong bom
                   tấn sắp tới của MCU</a
                 >
-                <h1 class="text-gray-500" style="font-size: small">
+                <h1 class="text-gray-500 text-sm">
                   Đa vũ trụ sẽ đưa rất nhiều phiên bản Deadpool khác nhau lên
                   màn ảnh lớn trong siêu bom tấn Deadpool & Wolverine.
                 </h1>
@@ -108,78 +108,7 @@
               </div>
             </div>
           </li>
-          <li>
-            <div class="grid grid-cols-2 gap-4">
-              <img
-                class="rounded-lg w-full"
-                src="https://genk.mediacdn.vn/zoom/540_336/139269124445442048/2024/7/4/ps4-1653562798854-17201114607691774150088-0-59-720-1211-crop-172011146595844491969.jpg"
-                alt="image loading...."
-              />
-              <div class="w-full">
-                <h1 class="font-bold">Sống</h1>
-                <a
-                  class="leading-snug"
-                  href="#"
-                  title="Tất tần tật những biến thể Deadpool sẽ xuất hiện trong bom tấn sắp tới của MCU"
-                  >Tất tần tật những biến thể Deadpool sẽ xuất hiện trong bom
-                  tấn sắp tới của MCU</a
-                >
-                <h1 class="text-gray-500" style="font-size: small">
-                  Đa vũ trụ sẽ đưa rất nhiều phiên bản Deadpool khác nhau lên
-                  màn ảnh lớn trong siêu bom tấn Deadpool & Wolverine.
-                </h1>
-                <h1>3 giờ trước</h1>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="grid grid-cols-2 gap-4">
-              <img
-                class="rounded-lg w-full"
-                src="https://genk.mediacdn.vn/zoom/540_336/139269124445442048/2024/7/4/ps4-1653562798854-17201114607691774150088-0-59-720-1211-crop-172011146595844491969.jpg"
-                alt="image loading...."
-              />
-              <div class="w-full">
-                <h1 class="font-bold">Sống</h1>
-                <a
-                  class="leading-snug"
-                  href="#"
-                  title="Tất tần tật những biến thể Deadpool sẽ xuất hiện trong bom tấn sắp tới của MCU"
-                  >Tất tần tật những biến thể Deadpool sẽ xuất hiện trong bom
-                  tấn sắp tới của MCU</a
-                >
-                <h1 class="text-gray-500" style="font-size: small">
-                  Đa vũ trụ sẽ đưa rất nhiều phiên bản Deadpool khác nhau lên
-                  màn ảnh lớn trong siêu bom tấn Deadpool & Wolverine.
-                </h1>
-                <h1>3 giờ trước</h1>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="grid grid-cols-2 gap-4">
-              <img
-                class="rounded-lg w-full"
-                src="https://genk.mediacdn.vn/zoom/540_336/139269124445442048/2024/7/4/ps4-1653562798854-17201114607691774150088-0-59-720-1211-crop-172011146595844491969.jpg"
-                alt="image loading...."
-              />
-              <div class="w-full">
-                <h1 class="font-bold">Sống</h1>
-                <a
-                  class="leading-snug"
-                  href="#"
-                  title="Tất tần tật những biến thể Deadpool sẽ xuất hiện trong bom tấn sắp tới của MCU"
-                  >Tất tần tật những biến thể Deadpool sẽ xuất hiện trong bom
-                  tấn sắp tới của MCU</a
-                >
-                <h1 class="text-gray-500" style="font-size: small">
-                  Đa vũ trụ sẽ đưa rất nhiều phiên bản Deadpool khác nhau lên
-                  màn ảnh lớn trong siêu bom tấn Deadpool & Wolverine.
-                </h1>
-                <h1>3 giờ trước</h1>
-              </div>
-            </div>
-          </li>
+         
         </ul>
       </div>
       <div>
@@ -200,7 +129,7 @@
                 Đa vũ trụ sẽ đưa rất nhiều phiên bản Deadpool khác nhau lên màn
                 ảnh lớn trong siêu bom tấn Deadpool & Wolverine.
               </h1>
-              <ul class="line col-span-3" style="font-size: small">
+              <ul class="line col-span-3 text-sm">
                 <li>
                   Buồng đông lạnh âm 150 độ C giúp cầu thủ Anh phục hồi có gì
                   đặc biệt?
@@ -218,7 +147,7 @@
             </div>
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
           <div class="bg-gray-100 p-5 rounded-lg">
             <h3 class="hotnews-label mb-5 border-b border-gray-200 flex">
               <a href="">
@@ -242,7 +171,7 @@
                 Chỉ có thể là Xiaomi: Tặng miễn phí 200.000... cây kem cho khách
                 đến cửa hàng
               </h1>
-              <ul class="line my-3" style="font-size: small">
+              <ul class="line my-3 text-sm">
                 <li>Người Việt tìm kiếm gì trên internet nửa năm đầu 2024?</li>
                 <li>
                   Tất tần tật những biến thể Deadpool sẽ xuất hiện trong bom tấn
@@ -271,7 +200,7 @@
                 Chỉ có thể là Xiaomi: Tặng miễn phí 200.000... cây kem cho khách
                 đến cửa hàng
               </h1>
-              <ul class="line my-3" style="font-size: small">
+              <ul class="line my-3 text-sm">
                 <li>
                   <div class="grid grid-cols-3 gap-2 flex">
                     <h1 class="col-span-2">
@@ -322,7 +251,7 @@
 
 <script>
 export default {
-  name: "UserInformation",
+  name: "NewsPostComponent",
   data() {
     return {};
   },
