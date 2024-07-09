@@ -1,6 +1,6 @@
 <template>
-    <div class="container mx-auto px-2 mt-1">
-        <div class="relative mb-3">
+    <div class="container mx-auto  mt-1">
+        <div class="relative mb-3 ">
             <input type="text" v-model="searchTerm" placeholder="Search songs..." @keyup.enter="searchTracks"
                 class="w-full px-4 py-2 rounded-md shadow-sm focus:outline-none" />
             <button v-if="searchTerm" @click="clearSearchTerm"
@@ -35,7 +35,7 @@
             </div>
             <SkeletonCard :loading="loading" />
         </div>
-        <Button @click="loadMore" :disabled="loading" :text="buttonText" :loading="loading" class="mt-2" />
+        <Button @click="loadMore" :disabled="loading" :text="buttonText" :loading="loading" class="mt-2 hidden" />
         <Player v-if="currentTrack" :currentTrack="currentTrack" @close-player="handleClosePlayer" />
     </div>
 </template>
