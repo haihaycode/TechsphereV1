@@ -1,26 +1,28 @@
 <template>
-  <div class="w1160">
-    <div class="grid grid-cols-1 md:grid-cols-2 my-5 gap-7">
-      <div class="col-span-1">
+  <div class="w-full md:w-[1160px] mx-auto mt-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
+      <div>
         <div>
           <img
             class="rounded-lg w-full"
             src="https://genk.mediacdn.vn/zoom/540_336/139269124445442048/2024/7/4/ps4-1653562798854-17201114607691774150088-0-59-720-1211-crop-172011146595844491969.jpg"
             alt="image loading...."
           />
-          <h1 class="font-bold" style="font-size: x-large">
+          <h1 class="font-bold text-xl">
             Sếp AMD thừa nhận: PlayStation 4 đã cứu AMD khỏi bờ vực phá sản
           </h1>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 border-b border-gray-200">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 border-b border-gray-200"
+        >
           <div>
             <img
               class="rounded-lg w-full"
               src="https://genk.mediacdn.vn/zoom/540_336/139269124445442048/2024/7/4/ps4-1653562798854-17201114607691774150088-0-59-720-1211-crop-172011146595844491969.jpg"
               alt="image loading...."
             />
-            <h1 class="font-bold" style="font-size: x-large">
+            <h1 class="font-bold text-xl">
               Sếp AMD thừa nhận: PlayStation 4 đã cứu AMD khỏi bờ vực phá sản
             </h1>
           </div>
@@ -30,14 +32,13 @@
               src="https://genk.mediacdn.vn/zoom/540_336/139269124445442048/2024/7/4/ps4-1653562798854-17201114607691774150088-0-59-720-1211-crop-172011146595844491969.jpg"
               alt="image loading...."
             />
-            <h1 class="font-bold" style="font-size: x-large">
+            <h1 class="font-bold text-xl">
               Sếp AMD thừa nhận: PlayStation 4 đã cứu AMD khỏi bờ vực phá sản
             </h1>
           </div>
         </div>
-
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="col-span-1">
           <div>
             <img
@@ -59,7 +60,7 @@
                   src="https://genk.mediacdn.vn/zoom/540_336/139269124445442048/2024/7/4/ps4-1653562798854-17201114607691774150088-0-59-720-1211-crop-172011146595844491969.jpg"
                   alt="image loading...."
                 />
-                <h1 class="font-bold ml-3" style="font-size: 70%">
+                <h1 class="font-bold ml-3 text-xs">
                   Bất ngờ: Dat Bike "flex" cha đẻ ChatGPT Sam Altman chính là
                   một trong những người đầu
                 </h1>
@@ -73,7 +74,7 @@
                   src="https://genk.mediacdn.vn/zoom/540_336/139269124445442048/2024/7/4/ps4-1653562798854-17201114607691774150088-0-59-720-1211-crop-172011146595844491969.jpg"
                   alt="image loading...."
                 />
-                <h1 class="font-bold ml-3" style="font-size: 70%">
+                <h1 class="font-bold ml-3 text-xs">
                   Bất ngờ: Dat Bike "flex" cha đẻ ChatGPT Sam Altman chính là
                   một trong những người đầu
                 </h1>
@@ -87,13 +88,91 @@
                   src="https://genk.mediacdn.vn/zoom/540_336/139269124445442048/2024/7/4/ps4-1653562798854-17201114607691774150088-0-59-720-1211-crop-172011146595844491969.jpg"
                   alt="image loading...."
                 />
-                <h1 class="font-bold ml-3" style="font-size: 70%">
+                <h1 class="font-bold ml-3 text-xs">
                   Bất ngờ: Dat Bike "flex" cha đẻ ChatGPT Sam Altman chính là
                   một trong những người đầu
                 </h1>
               </div>
             </li>
           </ul>
+        </div>
+        <!-- quảng cáo -->
+        <div class="bg-gray-200 rounded-lg p-3">
+          <div id="wrapperNative_0" onclick="addMoreLogging(this)">
+            <div id="top-wrap">
+              <div class="note-bg-red"></div>
+              <span>BẠN CẦN BIẾT</span>
+            </div>
+            <div class="line-split"></div>
+            <div class="line-under-split"></div>
+
+            <div class="wrap-content pt-5">
+              <div id="rightNative">
+                <div id="posterNative">
+                  <img
+                    src="//adi.admicro.vn/adt/cpc/tvcads/2023/04/300x140_600x280a-4_17199148869276.jpg"
+                  />
+                </div>
+              </div>
+              <div id="leftNative">
+                <div id="contentNative">
+                  <div id="titleNative">
+                    <span
+                      >Khai Hoan Prime – Căn hộ ven sông liền kề Phú Mỹ
+                      Hưng</span
+                    >
+                  </div>
+                  <div id="inforActive">
+                    <div id="logo-wrap">
+                      <span class="avatar_desc">Khai Hoan Prime</span>
+                    </div>
+                    <div id="viewNative">
+                      <span class="view-reach">(+57k reached)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="clickPopupNative"></div>
+            </div>
+          </div>
+          <div id="wrapperNative_1" onclick="addMoreLogging(this)">
+            <div class="wrap-content pt-2.5">
+              <div id="rightNative">
+                <div id="posterNative">
+                  <img
+                    src="//adi.admicro.vn/adt/cpc/tvcads/2024/06/300x140_600x280a1_17187045914784.jpg"
+                  />
+                </div>
+              </div>
+              <div id="leftNative">
+                <div id="contentNative">
+                  <div id="titleNative">
+                    <span
+                      >Hè 0 độ - Trải nghiệm 0 giới hạn: DND ưu đãi tới 40% chi
+                      phí PTKX</span
+                    >
+                  </div>
+                  <div id="inforActive">
+                    <div id="logo-wrap">
+                      <span class="avatar_desc"
+                        >BỆNH VIỆN MẮT QUỐC TẾ - DND</span
+                      >
+                    </div>
+                    <div id="viewNative">
+                      <span class="view-reach">(+72k reached)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="clickPopupNative"></div>
+            </div>
+            <div class="bottom-line"></div>
+            <div id="bottom-wrap">
+              <span>Được tài trợ</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -102,7 +181,7 @@
 <script>
 import { FindCategory } from "@/services/authService";
 export default {
-  name: "PostofCategory",
+  name: "PostofCategoryComponent",
   data() {
     return {
       search: "Ca Nhạc",
@@ -131,19 +210,19 @@ export default {
 
 
 <style>
-.w1160 {
+/* .w1160 {
   width: 1160px;
   margin: 0 auto;
-}
+} */
 
 .line li {
   padding-top: 18px;
   border-top: 1px dashed #e5e5e5;
   margin-bottom: 18px;
 }
-.image-gif{
-    width: 25px;
-    height: 25px;
-    margin-right: 5px;
+.image-gif {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
 }
 </style>

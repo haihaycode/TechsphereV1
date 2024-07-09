@@ -17,6 +17,14 @@ const publicRoutes = [
       description: "This is a collection of examples to showcase the features of VeeValidate"
     }
   },
+  {
+    path: '/contact',
+    component: useComponent("Contact"),
+    meta: {
+      title: "Tools - Techsphere",
+      description: "This is a collection of examples to showcase the features of VeeValidate"
+    }
+  },
   // other routes...
 ];
 
